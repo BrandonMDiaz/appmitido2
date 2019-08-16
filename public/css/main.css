@@ -1,0 +1,213 @@
+.body{
+  background-color: white;
+}
+.contenedor{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  background-color: white;
+
+}
+
+.logo{
+  margin-left: 4%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.logo h1{
+  margin-bottom: 0px;
+}
+.icono{
+  max-width:65px;
+  max-height: 65px;
+  margin-right: 15px;
+}
+
+.sesion{
+  width: 6%;
+  display: flex;
+  margin-right: 6%;
+  justify-content: space-between;
+}
+
+/**Navbar**/
+
+.sticky{
+  position: sticky;
+  top:0;
+}
+ul{
+
+  list-style-type: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.contenedor-navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+
+  padding: 17px;
+  background-color: #5BCEFF;
+
+}
+.contenedor-navbar *{
+  margin-left: 3%;
+}
+
+li h5{
+  font-weight: 900;
+  margin-bottom: 0px;
+}
+
+
+/************************************/
+/************************************/
+/*********Index Contenido************/
+/************************************/
+/************************************/
+
+.contenido{
+	/*margin-top: 3%;*/
+	/* background: white; */
+  background-color: #f8fafc;
+
+	display: grid;
+	grid-template-columns:  [tutoriales] 20% [examenes] 80% ;
+
+	/*segunda opcion*/
+	padding: 20px;
+	/* background: #f8f8f8; */
+}
+
+.categorias-tutoriales{
+	/*background: #F5F5F5;*/
+	/*background: #ACACAC;*/
+	/*background: #333333;*/
+	grid-column-start: tutoriales;
+	color: black;
+	font-size: 24px;
+	/*margin-top: 20px;*/
+	border-right: .4px solid #ACACAC;
+
+	/*segunda opcion*/
+
+	/* background: white; */
+  background-color: #f8fafc;
+
+
+	border-right: 0px solid #ACACAC;
+	font-size: 20px;
+}
+.wrapper-tutoriales {
+	/*background: red;*/
+	margin-left: 15px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+
+	/*border-style: solid;
+	border-color: black;*/
+}
+#lista-tutoriales li p{
+  margin-bottom: 0px;
+}
+#lista-tutoriales{
+  padding-left: 20px;
+}
+.titulo-tutorial {
+	display: inline-block;
+	font-weight: 900;
+	margin-block-start: 0px;
+  margin-block-end: 7%;
+}
+
+.sub-menu {
+	display: none;
+}
+.drop {
+	display: block;
+  transition: 0.3s;
+}
+
+.categorias-examenes {
+	display: flex;
+	grid-column-start: examenes;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	padding: 2%;
+
+  border-color: #dddfe2;
+  border-style: solid;
+  border-width: 1px;
+  background-color: white;
+  box-shadow: .5px 4px 8px .5px rgba(0,0,0,.12);
+  border-radius: 9px;
+
+	/*segunda opcion*/
+	/* background: #e6e6e6; */
+
+
+}
+.categoria-examen{
+	border-radius: 25px;
+	/*background-image: url('./img/matematicas.jpg');*/
+	font-size: 22px;
+	text-align: center;
+	width: 300px;
+	height: 260px;
+	color: white;
+	margin-bottom: 4%;
+	/*border: 1px solid #333333;*/
+	/*box-shadow: 0 4px 8px 0 rgba(0,0,0,1.5);*/
+	box-shadow: .5px 4px 8px .5px rgba(0,0,0,1.5);
+
+  transition: 0.3s;
+
+  /*background: white;*/
+}
+.categoria-examen:hover{
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,4);
+}
+
+/*********** index 2 *************/
+.categoria-examen-2{
+
+	border-radius: 5px;
+	font-size: 22px;
+	text-align: center;
+	width: 286px;
+	max-width: 286px;
+	height: 260px;
+	color: white;
+
+	/* background-color: white; */
+  background-color: #f8fafc;
+
+  margin-bottom: 4%;
+	box-shadow: .5px 4px 8px .5px rgba(0,0,0,.2);
+  transition: 0.3s;
+}
+
+.categoria-examen-img{
+  width: 286px;
+	max-width: 286px;
+	height: 190px;
+}
+
+.categoria-examen-body{
+	margin-top: 20px;
+	width: 100%;
+	/*height: 69px;*/
+
+  /* background-color: white; */
+}
+
+.nombre-categoria-2{
+	color: black;
+}
