@@ -15,7 +15,13 @@ class CreaTablaUniversidades extends Migration
     {
         Schema::create('universidades', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('user_id');
+            $table->string('logo');
             $table->timestamps();
+            $table->foreign('user_id')
+              ->references('id')
+              ->on('users')
+              ->onDelete('cascade');
         });
     }
 

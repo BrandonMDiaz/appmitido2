@@ -14,8 +14,18 @@ class CreaTablaExamenUniversidad extends Migration
     public function up()
     {
         Schema::create('examen_universidades', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+          $table->increments('id');
+          $table->unsignedInteger('user_id');
+          $table->unsignedInteger('universidad_id');
+          $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
+          $table->foreign('universidad_id')
+            ->references('id')
+            ->on('universidades')
+            ->onDelete('cascade');
+
         });
     }
 

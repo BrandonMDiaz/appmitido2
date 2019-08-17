@@ -41,7 +41,6 @@
   top:0;
 }
 ul{
-
   list-style-type: none;
   white-space: nowrap;
   overflow: hidden;
@@ -72,7 +71,9 @@ li h5{
 /*********Index Contenido************/
 /************************************/
 /************************************/
-
+.subtitulo{
+  color: #605F5F;
+}
 .contenido{
 	/*margin-top: 3%;*/
 	/* background: white; */
@@ -125,6 +126,8 @@ li h5{
 	font-weight: 900;
 	margin-block-start: 0px;
   margin-block-end: 7%;
+  border-bottom: 1px solid #DAD7D7;
+  width: 80%;
 }
 
 .sub-menu {
@@ -177,7 +180,6 @@ li h5{
 
 /*********** index 2 *************/
 .categoria-examen-2{
-
 	border-radius: 5px;
 	font-size: 22px;
 	text-align: center;
@@ -210,4 +212,136 @@ li h5{
 
 .nombre-categoria-2{
 	color: black;
+}
+
+
+/************************************/
+/************************************/
+/*********navbar opcion 2************/
+/************************************/
+/************************************/
+
+.contenedor2{
+  display: flex;
+  background-color: #5BCEFF;
+  justify-content: center;
+}
+
+.logo2{
+  margin-left: 4%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.logo2 h2{
+  margin-bottom: 0px;
+}
+.icono2{
+  max-width: 40px;
+  max-height: 40px;
+  margin-right: 15px;
+}
+
+.contenedor-navbar2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: flex-end;
+  width: 95%;
+  background-color: #5BCEFF;
+  margin-bottom: 0px;
+  margin-right: 10%;
+}
+
+li h5{
+  font-weight: 900;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.contenedor-navbar2 a {
+  padding: 18px;
+  color: black;
+}
+
+.contenedor-navbar2 a:hover {
+  background-color: #A6E4FF;
+}
+
+/************************************/
+/************************************/
+/*******Tutoriales Contenido*********/
+/************************************/
+/************************************/
+
+.header-tutoriales{
+	font-size: 30px;
+  margin-left: 8%;
+}
+
+.header-tutoriales h1{
+	display: inline-block;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.categoria{
+	display: flex;
+	justify-content: flex-start;
+	width: 85%;
+	height: 200px;
+	margin-left: 8%;
+	margin-bottom: 2%;
+	box-shadow: .1px 2px 2px .1px rgba(0,0,0,.3);
+  border-color: #DAD7D7;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.img-tuto{
+  height: 200px;
+  border-radius: 5px;
+
+}
+.categoria-nombre{
+  flex-grow:2;
+  max-width: 350px;
+  width: 350px;
+}
+
+.categoria-tut-container{
+  display: grid;
+  grid-template-rows: [titulo] 20% [contenido] 80%;
+}
+
+.categoria-titulo{
+  display: flex;
+  align-items: center;
+  grid-column-start: titulo;
+  /* color: #005987; */
+  padding-top: 10px;
+  padding-left: 20px;
+}
+.categoria-titulo h4{
+  margin-bottom: 0px;
+  margin-left: 1%;
+  color: #045f8e;
+
+}
+.catego-tut{
+  grid-column-start: contenido;
+	display: flex;
+	flex-wrap: wrap;
+
+	color: black;
+	margin: 0px;
+}
+
+.categoria-tutorial{
+	padding-top: 10px;
+	font-size: 17px;
+	width: 237px;
+	margin-left: 5px;
 }

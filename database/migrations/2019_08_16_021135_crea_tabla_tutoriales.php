@@ -15,7 +15,12 @@ class CreaTablaTutoriales extends Migration
     {
         Schema::create('tutoriales', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('subcategoria_id');
             $table->timestamps();
+            $table->foreign('subcategorias_id')
+              ->references('id')
+              ->on('subCategorias')
+              ->onDelete('cascade');
         });
     }
 

@@ -14,8 +14,21 @@ class CreaTablaExamenes extends Migration
     public function up()
     {
         Schema::create('examenes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('categoria_id');
+            $table->string('calificacion');
+            $table->integer('tiempo_en_segundos');
+            $table->dateTime('fecha');
             $table->timestamps();
+            $table->foreign('user_id')
+              ->references('id')
+              ->on('users')
+              ->onDelete('cascade');
+            $table->foreign('categoria_id')
+              ->references('id')
+              ->on('categorias')
+              ->onDelete('cascade');
         });
     }
 
