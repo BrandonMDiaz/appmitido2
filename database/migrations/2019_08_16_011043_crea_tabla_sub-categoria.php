@@ -14,7 +14,7 @@ class CreaTablaSubCategoria extends Migration
     public function up()
     {
         Schema::create('subCategorias', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('categoria_id');
             $table->string('nombre');
@@ -25,7 +25,7 @@ class CreaTablaSubCategoria extends Migration
               ->onDelete('cascade');
             $table->foreign('categoria_id')
               ->references('id')
-              ->on('users')
+              ->on('categorias')
               ->onDelete('cascade');
 
         });

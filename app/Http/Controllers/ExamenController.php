@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pregunta;
 use App\Examen;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class ExamenController extends Controller
      */
     public function index()
     {
-        return view('examen.index');
+      $preguntas = Pregunta::get10preguntas();
+      return view('examen.examen', compact('preguntas'));
     }
 
     /**
@@ -53,7 +55,7 @@ class ExamenController extends Controller
      */
     public function show(Examen $examen)
     {
-      
+
     }
 
     /**

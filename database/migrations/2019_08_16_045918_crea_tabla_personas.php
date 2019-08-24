@@ -14,7 +14,7 @@ class CreaTablaPersonas extends Migration
     public function up()
     {
         Schema::create('personas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('preparatoria');
             $table->float('promedio');

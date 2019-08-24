@@ -14,6 +14,7 @@ class UniversidadesTableSeeder extends Seeder
     {
       Universidad::create([
         'user_id' => '2',
+        'logo' => 'holi',
         'nombre' => 'UdG',
         'ubicacion' => 'Volcan Cofre de Perote',
       ]);

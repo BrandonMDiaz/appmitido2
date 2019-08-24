@@ -12,6 +12,6 @@ class ExamenesTableSeeder extends Seeder
      */
     public function run()
     {
-      // factory(App\User::class, 15)->create();
+      factory(App\Examen::class, 15)->create();
     }
 }

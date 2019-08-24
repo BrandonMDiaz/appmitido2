@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('home.index');
 });
 
-Route::get('/tutoriales', function () {
-    return view('tutoriales.tutoriales');
-});
+Route::get('/tutoriales', 'TutorialController@index');
+
+Route::get('/examen', 'ExamenController@index');
 
 Auth::routes();
 

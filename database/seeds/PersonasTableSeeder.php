@@ -13,7 +13,7 @@ class PersonasTableSeeder extends Seeder
     {
       Persona::create([
         'user_id' => '1',
-        'escuela' => 'Preparatoria 9',
+        'preparatoria' => 'Preparatoria 9',
         'promedio' => '89.1',
       ]);
 

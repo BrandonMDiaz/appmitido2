@@ -14,12 +14,11 @@ class CreaTablaPreguntas extends Migration
     public function up()
     {
         Schema::create('preguntas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('subcategoria_id');
             $table->text('pregunta');
             $table->string('imagen');
-            $table->integer('tiempo_en_segundos');
             $table->string('opcion1');
             $table->string('opcion2');
             $table->string('opcion3');

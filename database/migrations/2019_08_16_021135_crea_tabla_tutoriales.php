@@ -14,8 +14,8 @@ class CreaTablaTutoriales extends Migration
     public function up()
     {
         Schema::create('tutoriales', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedInteger('subcategoria_id');
+            $table->increments('id');
+            $table->unsignedInteger('subcategorias_id');
             $table->timestamps();
             $table->foreign('subcategorias_id')
               ->references('id')

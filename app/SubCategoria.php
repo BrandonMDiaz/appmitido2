@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubCategoria extends Model
 {
+  protected $table = 'subcategorias';
+
   /**Relacion 1 a 1**/
   public function tutorial()
   {
