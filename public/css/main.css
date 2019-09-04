@@ -1,6 +1,32 @@
 .body{
   background-color: white;
 }
+
+
+/************************************/
+/************************************/
+/*********Landing page************/
+/************************************/
+/************************************/
+
+
+.wavy{
+  background-image: url('/images/f2_gris2.png');
+  width: 100%;
+  height: 800px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+/************************************/
+/************************************/
+/*********No se :v************/
+/************************************/
+/************************************/
+
 .contenedor{
   display: flex;
   justify-content: space-between;
@@ -40,6 +66,7 @@
   position: sticky;
   top:0;
   z-index: 10;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1);
 }
 ul{
   list-style-type: none;
@@ -138,6 +165,11 @@ li h5{
   transition: 0.3s;
 }
 
+.container-examen{
+  padding-left: 1%;
+    padding-right: 1%;
+}
+
 .categorias-examenes {
 	display: flex;
 	grid-column-start: examenes;
@@ -174,6 +206,7 @@ li h5{
 
   /*background: white;*/
 }
+
 .categoria-examen:hover{
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,4);
 }
@@ -195,7 +228,13 @@ li h5{
 	box-shadow: .5px 4px 8px .5px rgba(0,0,0,.2);
   transition: 0.3s;
 }
-
+.categoria-examen-2 a{
+  text-decoration: none;
+  
+}
+.categoria-examen-2:hover{
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,2);
+}
 .categoria-examen-img{
   width: 286px;
 	max-width: 286px;
@@ -277,12 +316,12 @@ li h5{
 /************************************/
 
 .header-tutoriales{
-	font-size: 20px;
+	font-size: 50px;
   margin-left: 8%;
 }
 
 .header-tutoriales h1{
-  font-size: 25px;
+  font-size: 60px;
 	display: inline-block;
   margin-top: 2%;
   margin-bottom: 2%;
@@ -438,7 +477,8 @@ li h5{
   padding: 3%;
   flex-grow: 0;
   flex-shrink: 0;
-  margin-right: 9.15px;
+  /* margin-right: 10px; */
+  margin: 0px;
 }
 
 .selectedButton{
@@ -456,4 +496,30 @@ li h5{
   width: 100%;
   display: flex;
   justify-content: space-around;
+}
+.en-linea{
+  display:flex;
+  /* width: 100%; */
+  /* justify-content: space-between; */
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 3px;
+}
+.en-linea p{
+  margin-left: 13px;
+  margin-bottom: 0px;
+  margin-right: 13px;
+}
+.res-buena-div{
+  background-color: #00800052;
+}
+.res-mala-div{
+  background-color: #ff000052;
+}
+.res-mala{
+  color: red;
+}
+.res-buena{
+  color: green;
 }

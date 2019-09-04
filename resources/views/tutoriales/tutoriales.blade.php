@@ -3,96 +3,101 @@
 @section('content')
 
 	<div class="tutoriales">
-
+		{{-- <div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-4">Tutoriales</h1>
+				<p class="lead">Contamos con tutoriales de diferentes tematicas para que domines al 100% todas las materias</p>
+			</div>
+		</div> --}}
 		<div class="header-tutoriales subtitulo">
-      <h1>Tutoriales</h1>
+			<h1>Tutoriales</h1>
 		</div>
 
 		<div class="categoria">
 			<div class="categoria-nombre">
-        <img class='img-tuto' src="{{URL::asset('/images/math.jpg')}}"/>
+				<img class='img-tuto' src="{{URL::asset('/images/math.jpg')}}"/>
 			</div>
-      <div class="categoria-tut-container">
-        <div class="categoria-titulo">
-          <i class="fas  fa-calculator"></i>
-          <h4>Matematicas</h4>
-        </div>
-        <ul class="catego-tut">
-          <li class="categoria-tutorial">loremffffffffffffffffffffffffffffdsaf</li>
-          <li class="categoria-tutorial">impsu</li>
-          <li class="categoria-tutorial">cacatua</li>
-          <li class="categoria-tutorial">colorante</li>
-          <li class="categoria-tutorial">aguazul</li>
-          <li class="categoria-tutorial">afdsafdsa</li>
-          <li class="categoria-tutorial">afsadfas</li>
-          <li class="categoria-tutorial">afdsafa</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-        </ul>
-      </div>
+			<div class="categoria-tut-container">
+				<div class="categoria-titulo">
+					<i class="fas  fa-calculator"></i>
+					<h4>Matematicas</h4>
+				</div>
+				<ul class="catego-tut">
+					<li class="categoria-tutorial">loremffffffffffffffffffffffffffffdsaf</li>
+					<li class="categoria-tutorial">impsu</li>
+					<li class="categoria-tutorial">cacatua</li>
+					<li class="categoria-tutorial">colorante</li>
+					<li class="categoria-tutorial">aguazul</li>
+					<li class="categoria-tutorial">afdsafdsa</li>
+					<li class="categoria-tutorial">afsadfas</li>
+					<li class="categoria-tutorial">afdsafa</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+				</ul>
+			</div>
 		</div>
 
 		<div class="categoria">
 			<div class="categoria-nombre">
-        <img class='img-tuto' src="{{URL::asset('/images/math.jpg')}}"/>
+				<img class='img-tuto' src="{{URL::asset('/images/math.jpg')}}"/>
 			</div>
-      <div class="categoria-tut-container">
-        <div class="categoria-titulo">
-          <i class="fas fa-2x fa-calculator"></i>
-          <h4>Matematicas</h4>
-        </div>
-        <ul class="catego-tut">
-          <li class="categoria-tutorial">loremffffffffffffffffffffffffffffdsaf</li>
-          <li class="categoria-tutorial">impsu</li>
-          <li class="categoria-tutorial">cacatua</li>
-          <li class="categoria-tutorial">colorante</li>
-          <li class="categoria-tutorial">aguazul</li>
-          <li class="categoria-tutorial">afdsafdsa</li>
-          <li class="categoria-tutorial">afsadfas</li>
-          <li class="categoria-tutorial">afdsafa</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-        </ul>
-      </div>
+			<div class="categoria-tut-container">
+				<div class="categoria-titulo">
+					<i class="fas fa-2x fa-calculator"></i>
+					<h4>Matematicas</h4>
+				</div>
+				<ul class="catego-tut">
+					<li class="categoria-tutorial">loremffffffffffffffffffffffffffffdsaf</li>
+					<li class="categoria-tutorial">impsu</li>
+					<li class="categoria-tutorial">cacatua</li>
+					<li class="categoria-tutorial">colorante</li>
+					<li class="categoria-tutorial">aguazul</li>
+					<li class="categoria-tutorial">afdsafdsa</li>
+					<li class="categoria-tutorial">afsadfas</li>
+					<li class="categoria-tutorial">afdsafa</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+				</ul>
+			</div>
 		</div>
 
 		<div class="categoria">
 			<div class="categoria-nombre">
-        <img class='img-tuto' src="{{URL::asset('/images/math.jpg')}}"/>
+				<img class='img-tuto' src="{{URL::asset('/images/math.jpg')}}"/>
 			</div>
-      <div class="categoria-tut-container">
-        <div class="categoria-titulo">
-          <i class="fas fa-2x fa-calculator"></i>
-          <h4>Matematicas</h4>
-        </div>
-        <ul class="catego-tut">
-          <li class="categoria-tutorial">loremffffffffffffffffffffffffffffdsaf</li>
-          <li class="categoria-tutorial">impsu</li>
-          <li class="categoria-tutorial">cacatua</li>
-          <li class="categoria-tutorial">colorante</li>
-          <li class="categoria-tutorial">aguazul</li>
-          <li class="categoria-tutorial">afdsafdsa</li>
-          <li class="categoria-tutorial">afsadfas</li>
-          <li class="categoria-tutorial">afdsafa</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-          <li class="categoria-tutorial">afsadfsadfas</li>
-        </ul>
-      </div>
+			<div class="categoria-tut-container">
+				<div class="categoria-titulo">
+					<i class="fas fa-2x fa-calculator"></i>
+					<h4>Matematicas</h4>
+				</div>
+				<ul class="catego-tut">
+					<li class="categoria-tutorial">loremffffffffffffffffffffffffffffdsaf</li>
+					<li class="categoria-tutorial">impsu</li>
+					<li class="categoria-tutorial">cacatua</li>
+					<li class="categoria-tutorial">colorante</li>
+					<li class="categoria-tutorial">aguazul</li>
+					<li class="categoria-tutorial">afdsafdsa</li>
+					<li class="categoria-tutorial">afsadfas</li>
+					<li class="categoria-tutorial">afdsafa</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+					<li class="categoria-tutorial">afsadfsadfas</li>
+				</ul>
+			</div>
 		</div>
 
 

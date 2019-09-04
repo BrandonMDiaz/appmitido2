@@ -5,10 +5,17 @@
 //al finalizar el examen mostrar resultados
 var totalPreguntas = 10
 var currentIndex = 0;
+//la opcion qu escogio el usuario
 var numOpcion = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+//el texto que tiene la respuesta
 var respuesta = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+//la respuesta correcta
 var respuestasCorrectas = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+//el lugar donde está la respuesta correcta
 var indiceRespuestCorrecta = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+//cronometro
+var secs = 59;
+var mins = 9;
 
 preguntaRandom();
 //funcion para cambiar la respuesta correcta de lugar
@@ -29,11 +36,37 @@ function preguntaRandom(){
   }
 }
 
+//poner palomita y cruz a las preguntas
 function calificarPreguntas(id){
-  
+  let newIcon = document.createElement("i");
+  let newIcon2 = document.createElement("i");
+
+  //agarrar div
+  let div = document.getElementById(`${indiceRespuestCorrecta[id]}${id}div`);
+  newIcon.classList.add('fas fa-check res-buena');
+  div.classList.add('res-buena-div');
+  div.appendChild(newIcon);
+
+  //si la respuesta fue incorrecta se califica solo como mala
+  if(respuesta[i] != respuestasCorrectas[i]){
+    let divMalo = document.getElementById(`${numOpcion[id]}${id}div`);
+    newIcon2.classList.add('fas fa-check res-mala');
+    divMalo.classList.add('res-mala-div');
+    divMalo.appendChild(newIcon);
+  }
 }
 
+function showEndModal(aciertos, tiempo){
+  //mostrar aciertos
+  //mostrar tiempo
+  //opcion para ver examen
+  //mostrar tutoriales recomendados
+  //quitar boton de finalizar y poner boton de volver
+}
+
+//funcion que se activa al presionar el boton o el tiempo se acabo
 function finalizar() {
+  let tiempo = `${mins}:${secs}`;
   //mostrar resultados
   let aciertos = 0;
   let errores = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
@@ -41,10 +74,9 @@ function finalizar() {
     if(respuesta[i] == respuestasCorrectas[i]){
       aciertos++;
     }
-    else {
-
-    }
+    calificarPreguntas(i);
   }
+  showEndModal(aciertos,tiempo);
   //mostrar modal pero con resultados
 }
 
@@ -67,11 +99,13 @@ function showPregunta(id, odlId) {
 
   }
 
+  //efecto de cambio de pregunta
   let preguntaLista = document.querySelector('.preguntas-todas');
   let preguntaTodas = document.querySelectorAll('.preguntas-todas div');
-  const size = preguntaTodas[0].clientWidth + 11;
+  const size = preguntaTodas[0].getBoundingClientRect().width;
   preguntaLista.style.transition = 'transform 0.2s ease-in-out';
   preguntaLista.style.transform = 'translateX(' + (-size * currentIndex) + 'px)';
+  console.log(-size);
 }
 
 function cambiarDePregunta(id) {
@@ -124,8 +158,7 @@ function preguntaContestada(pregunta){
 function empezar(){
   const modal = document.getElementById('my-modal');
   modal.style.display = 'none';
-  var secs = 59;
-  var mins = 9;
+
   var time = setInterval(function(){
   	//revisar si secs llegó a 0
   	if(mins >= 0){

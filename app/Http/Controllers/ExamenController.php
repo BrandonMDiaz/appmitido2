@@ -15,8 +15,7 @@ class ExamenController extends Controller
      */
     public function index()
     {
-      $preguntas = Pregunta::get10preguntas();
-      return view('examen.examen', compact('preguntas'));
+      return view('examen.index');
     }
 
     /**
@@ -55,7 +54,8 @@ class ExamenController extends Controller
      */
     public function show(Examen $examen)
     {
-
+      $preguntas = Pregunta::get10preguntas();
+      return view('examen.examen', compact('preguntas'));
     }
 
     /**

@@ -12,12 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('home.index');
+    return view('landing.index');
+});
+Route::get('/universidad', function () {
+    return view('universidad.index');
 });
 
 Route::get('/tutoriales', 'TutorialController@index');
 
-Route::get('/examen', 'ExamenController@index');
+// Route::get('/examen', 'ExamenController@index');
+Route::resource('examen', 'ExamenController');
 
 Auth::routes();
 

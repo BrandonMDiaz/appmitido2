@@ -33,27 +33,36 @@
             </div>
             <div class="opciones">
               <div id="1{{$loop->index}}op" class="opcion">
-                <input type="radio" onclick="preguntaContestada({{'1' . $loop->index }})" name="answer" />
-                <p>a)</p>
+                <div id="1{{$loop->index}}div" class="en-linea">
+                  <input type="radio" onclick="preguntaContestada({{'1' . $loop->index }})" name="answer" />
+                  <p>a)</p>
+                </div>
                 <p  id="1{{$loop->index}}">{{$pregunta->opcion1}}</p>
               </div>
               <div id="2{{$loop->index}}op" class="opcion">
-                <input type="radio" onclick="preguntaContestada({{'2' . $loop->index }})" name="answer" />
-                <p>b)</p>
+                <div id="2{{$loop->index}}div" class="en-linea">
+                  <input type="radio" onclick="preguntaContestada({{'2' . $loop->index }})" name="answer" />
+                  <p>b)</p>
+                </div>
                 <p id="2{{$loop->index}}">{{$pregunta->opcion2}}</p>
 
                 {{-- <button type="button" onclick="preguntaContestada(this.id)" name="button">{{$pregunta->opcion2}}</button> --}}
               </div>
               <div id="3{{$loop->index}}op" class="opcion">
-                <input type="radio" onclick="preguntaContestada({{'3' . $loop->index }})" name="answer" />
-                <p>c)</p>
+                <div id="3{{$loop->index}}div" class="en-linea res-mala-div">
+                  <input type="radio" onclick="preguntaContestada({{'3' . $loop->index }})" name="answer" />
+                  <p>c)</p>
+                  <i class="fas fa-times res-mala"></i>
+                </div>
                 <p id="3{{$loop->index}}">{{$pregunta->opcion3}}</p>
-
                 {{-- <button id="3{{$loop->index}}" type="button" onclick="preguntaContestada(this.id)" name="button">{{$pregunta->opcion3}}</button> --}}
               </div>
               <div id="4{{$loop->index}}op" class="opcion">
-                <input type="radio" onclick="preguntaContestada({{'4' . $loop->index }})"  name="answer" />
-                <p>d)</p>
+                <div id="4{{$loop->index}}div" class="en-linea res-buena-div">
+                  <input type="radio" onclick="preguntaContestada({{'4' . $loop->index }})"  name="answer" />
+                  <p>d)</p>
+                  <i class="fas fa-check res-buena"></i>
+                </div>
                 <p id="4{{$loop->index}}">{{$pregunta->respuesta}}</p>
                 {{-- <button id="4{{$loop->index}}" type="button" onclick="preguntaContestada(this.id)" name="button">{{$pregunta->respuesta}}</button> --}}
               </div>
