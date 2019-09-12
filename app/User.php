@@ -37,22 +37,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /**Relacion 1 a muchos**/
-    public function preguntas()
-    {
-      return $this->hasMany('App\Pregunta');
-    }
-
-    /**Relacion 1 a muchos**/
-    public function subCategorias()
-    {
-      return $this->hasMany('App\SubCategoria');
-    }
-
-    /**Relacion 1 a muchos**/
-    public function categorias()
-    {
-      return $this->hasMany('App\Categoria');
-    }
 
 }

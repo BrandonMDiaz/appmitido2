@@ -21,8 +21,8 @@ class SubCategoria extends Model
    }
 
   /**Relacion 1 a muchos inversa**/
-  public function user()
+  public function universidad()
    {
-       return $this->belongsTo('App\User');
+       return $this->belongsTo('App\Universidad');
    }
 }

@@ -14,10 +14,13 @@
 Route::get('/', function () {
     return view('landing.index');
 });
-Route::get('/universidad', function () {
-    return view('universidad.index');
+Route::get('/', function () {
+    return view('landing.index');
 });
-
+// Route::get('/universidad', function () {
+//     return view('universidad.index');
+// });
+Route::get('/universidad','UniversidadController@index' );
 Route::get('/tutoriales', 'TutorialController@index');
 
 // Route::get('/examen', 'ExamenController@index');

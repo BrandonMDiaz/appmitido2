@@ -13,15 +13,15 @@ class CategoriasTableSeeder extends Seeder
     public function run()
     {
       Categoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'nombre' => 'Matematicas',
       ]);
       Categoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'nombre' => 'Español',
       ]);
       Categoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'nombre' => 'Ingles',
       ]);
 

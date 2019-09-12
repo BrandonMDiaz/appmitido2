@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Pregunta::class, function (Faker $faker) {
     return [
-        'user_id' => 2,
+        'universidad_id' => 1,
         'SubCategoria_id' => $faker->numberBetween(1,3),
         'pregunta' => $faker->sentence(15),
         'opcion1' => $faker->state,

@@ -2,6 +2,12 @@
   background-color: white;
 }
 
+.nav-item{
+  z-index: 100;
+}
+.show{
+  z-index: 100;
+}
 
 /************************************/
 /************************************/
@@ -100,47 +106,48 @@ li h5{
 /************************************/
 .subtitulo{
   color: #605F5F;
+  font-size: 38px;
 }
 .contenido{
-	/*margin-top: 3%;*/
-	/* background: white; */
+  /*margin-top: 3%;*/
+  /* background: white; */
   background-color: #f8fafc;
 
-	display: grid;
-	grid-template-columns:  [tutoriales] 20% [examenes] 80% ;
+  display: grid;
+  grid-template-columns:  [tutoriales] 20% [examenes] 80% ;
 
-	/*segunda opcion*/
-	padding: 20px;
-	/* background: #f8f8f8; */
+  /*segunda opcion*/
+  padding: 20px;
+  /* background: #f8f8f8; */
 }
 
 .categorias-tutoriales{
-	/*background: #F5F5F5;*/
-	/*background: #ACACAC;*/
-	/*background: #333333;*/
-	grid-column-start: tutoriales;
-	color: black;
-	font-size: 24px;
-	/*margin-top: 20px;*/
-	border-right: .4px solid #ACACAC;
+  /*background: #F5F5F5;*/
+  /*background: #ACACAC;*/
+  /*background: #333333;*/
+  grid-column-start: tutoriales;
+  color: black;
+  font-size: 24px;
+  /*margin-top: 20px;*/
+  border-right: .4px solid #ACACAC;
 
-	/*segunda opcion*/
+  /*segunda opcion*/
 
-	/* background: white; */
+  /* background: white; */
   background-color: #f8fafc;
 
 
-	border-right: 0px solid #ACACAC;
-	font-size: 20px;
+  border-right: 0px solid #ACACAC;
+  font-size: 20px;
 }
 .wrapper-tutoriales {
-	/*background: red;*/
-	margin-left: 15px;
-	padding-bottom: 5px;
-	padding-top: 5px;
+  /*background: red;*/
+  margin-left: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 
-	/*border-style: solid;
-	border-color: black;*/
+  /*border-style: solid;
+  border-color: black;*/
 }
 #lista-tutoriales li p{
   margin-bottom: 0px;
@@ -149,33 +156,34 @@ li h5{
   padding-left: 20px;
 }
 .titulo-tutorial {
-	display: inline-block;
-	font-weight: 900;
-	margin-block-start: 0px;
+  display: inline-block;
+  font-weight: 900;
+  margin-block-start: 0px;
   margin-block-end: 7%;
   border-bottom: 1px solid #DAD7D7;
   width: 80%;
+   cursor: pointer;
 }
 
 .sub-menu {
-	display: none;
+  display: block;
 }
 .drop {
-	display: block;
+  display: none;
   transition: 0.3s;
 }
 
 .container-examen{
   padding-left: 1%;
-    padding-right: 1%;
+  padding-right: 1%;
 }
 
 .categorias-examenes {
-	display: flex;
-	grid-column-start: examenes;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-	padding: 2%;
+  display: flex;
+  grid-column-start: examenes;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 2%;
 
   border-color: #dddfe2;
   border-style: solid;
@@ -184,23 +192,23 @@ li h5{
   box-shadow: .5px 4px 8px .5px rgba(0,0,0,.12);
   border-radius: 9px;
 
-	/*segunda opcion*/
-	/* background: #e6e6e6; */
+  /*segunda opcion*/
+  /* background: #e6e6e6; */
 
 
 }
 .categoria-examen{
-	border-radius: 25px;
-	/*background-image: url('./img/matematicas.jpg');*/
-	font-size: 22px;
-	text-align: center;
-	width: 300px;
-	height: 260px;
-	color: white;
-	margin-bottom: 4%;
-	/*border: 1px solid #333333;*/
-	/*box-shadow: 0 4px 8px 0 rgba(0,0,0,1.5);*/
-	box-shadow: .5px 4px 8px .5px rgba(0,0,0,1.5);
+  border-radius: 25px;
+  /*background-image: url('./img/matematicas.jpg');*/
+  font-size: 22px;
+  text-align: center;
+  width: 300px;
+  height: 260px;
+  color: white;
+  margin-bottom: 4%;
+  /*border: 1px solid #333333;*/
+  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,1.5);*/
+  box-shadow: .5px 4px 8px .5px rgba(0,0,0,1.5);
 
   transition: 0.3s;
 
@@ -208,49 +216,49 @@ li h5{
 }
 
 .categoria-examen:hover{
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,4);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,4);
 }
 
 /*********** index 2 *************/
 .categoria-examen-2{
-	border-radius: 5px;
-	font-size: 22px;
-	text-align: center;
-	width: 286px;
-	max-width: 286px;
-	height: 260px;
-	color: white;
+  border-radius: 5px;
+  font-size: 22px;
+  text-align: center;
+  width: 286px;
+  max-width: 286px;
+  height: 260px;
+  color: white;
 
-	/* background-color: white; */
+  /* background-color: white; */
   background-color: #f8fafc;
 
   margin-bottom: 4%;
-	box-shadow: .5px 4px 8px .5px rgba(0,0,0,.2);
+  box-shadow: .5px 4px 8px .5px rgba(0,0,0,.2);
   transition: 0.3s;
 }
 .categoria-examen-2 a{
   text-decoration: none;
-  
+
 }
 .categoria-examen-2:hover{
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,2);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,2);
 }
 .categoria-examen-img{
   width: 286px;
-	max-width: 286px;
-	height: 190px;
+  max-width: 286px;
+  height: 190px;
 }
 
 .categoria-examen-body{
-	margin-top: 20px;
-	width: 100%;
-	/*height: 69px;*/
+  margin-top: 20px;
+  width: 100%;
+  /*height: 69px;*/
 
   /* background-color: white; */
 }
 
 .nombre-categoria-2{
-	color: black;
+  color: black;
 }
 
 
@@ -292,22 +300,40 @@ li h5{
   margin-right: 10%;
 }
 
+.contenedor-navbar2 li{
+  display: flex;
+  align-items: center;
+}
 li h5{
   color:#555;
   margin-bottom: 0px;
   width: 100%;
   height: 100%;
+  font-size: 18px;
 }
 
-.contenedor-navbar2 a {
+.contenedor-navbar2 li {
   padding: 18px;
   color: black;
   text-decoration: none;
+  
 }
 
-.contenedor-navbar2 a:hover {
+.contenedor-navbar2 li:hover {
   background-color: #A6E4FF;
 }
+#navbarDropdown{
+  color:#555;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+
+}
+.dropdown{
+  position:static;
+}
+
 
 /************************************/
 /************************************/
@@ -316,25 +342,25 @@ li h5{
 /************************************/
 
 .header-tutoriales{
-	font-size: 50px;
+  font-size: 50px;
   margin-left: 8%;
 }
 
 .header-tutoriales h1{
   font-size: 60px;
-	display: inline-block;
+  display: inline-block;
   margin-top: 2%;
   margin-bottom: 2%;
 }
 
 .categoria{
-	display: flex;
-	justify-content: flex-start;
-	width: 85%;
-	height: 200px;
-	margin-left: 8%;
-	margin-bottom: 2%;
-	box-shadow: .1px 2px 2px .1px rgba(0,0,0,.3);
+  display: flex;
+  justify-content: flex-start;
+  width: 85%;
+  height: 200px;
+  margin-left: 8%;
+  margin-bottom: 2%;
+  box-shadow: .1px 2px 2px .1px rgba(0,0,0,.3);
   border-color: #DAD7D7;
   border-radius: 5px;
   border-style: solid;
@@ -373,18 +399,18 @@ li h5{
 }
 .catego-tut{
   grid-column-start: contenido;
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-	color: black;
-	margin: 0px;
+  color: black;
+  margin: 0px;
 }
 
 .categoria-tutorial{
-	padding-top: 10px;
-	font-size: 17px;
-	width: 237px;
-	margin-left: 5px;
+  padding-top: 10px;
+  font-size: 17px;
+  width: 237px;
+  margin-left: 5px;
 }
 
 /************************************/
@@ -394,13 +420,13 @@ li h5{
 /************************************/
 
 .modal-exam{
-    width: 600px;
-    height: 390px;
-    background: white;
-    border: 1px solid #DAD7D7;
-    border-radius: 10px;
-    box-shadow: .1px 2px 2px .1px rgba(0,0,0,.3);
-    padding: 3%;
+  width: 600px;
+  height: 390px;
+  background: white;
+  border: 1px solid #DAD7D7;
+  border-radius: 10px;
+  box-shadow: .1px 2px 2px .1px rgba(0,0,0,.3);
+  padding: 3%;
 }
 
 .modal{
@@ -441,8 +467,8 @@ li h5{
 }
 
 .numeros ul li p:hover{
-   text-decoration: underline;
-   color: black;
+  text-decoration: underline;
+  color: black;
 }
 
 .tiempo{
@@ -522,4 +548,93 @@ li h5{
 }
 .res-buena{
   color: green;
+}
+
+
+/************************************/
+/************************************/
+/********** Universidad *************/
+/************************************/
+/************************************/
+.universidades{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+}
+.universidades *{
+  /* width: 100%; */
+  /* flex-grow: 2; */
+}
+.buscar{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.search{
+  /* border-radius: 1px; */
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.universidades-lista{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-universidad{
+  width: 250px;
+  max-width: 250px;
+  height: 230px;
+  max-height: 230px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  /* flex-grow: 5; */
+  /* border-radius: 50%; */
+
+}
+.logo-universidad2{
+  /* padding: 1%; */
+  width: 250px;
+  max-width: 250px;
+  border: 1px solid #b1b1b1;
+  border-bottom: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.universidades-lista{
+  width: 92%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.universidades-lista a{
+  text-decoration: none;
+  color: #212529;
+}
+.universidad{
+  margin-bottom: 30px;
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.inf-universidad {
+  padding-top: 5%;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #b1b1b1;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  /* padding: 3%; */
+  /* background-color: #e9ecef; */
 }

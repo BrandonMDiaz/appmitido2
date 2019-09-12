@@ -24,7 +24,9 @@
       </p>
     </div>
     <div  class="preguntas-lista">
-      
+      <div class="contador-pregunta">
+        <p>Pregunta <span>1</span> de 10</p>
+      </div>
       <div id='preg2' class="preguntas-todas">
         @foreach ($preguntas as $pregunta)
           <div id="pregCompl-{{$loop->index + 1}}" class="main-pregunta">

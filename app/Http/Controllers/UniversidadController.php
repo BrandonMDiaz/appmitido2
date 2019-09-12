@@ -14,7 +14,8 @@ class UniversidadController extends Controller
      */
     public function index()
     {
-        //
+      $universidades = Universidad::paginate(10);
+      return view('universidad.index', compact('universidades'));
     }
 
     /**

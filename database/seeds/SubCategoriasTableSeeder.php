@@ -14,53 +14,53 @@ class SubCategoriasTableSeeder extends Seeder
     {
 
       SubCategoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'categoria_id' => '1',
         'nombre' => 'Fracciones',
       ]);
 
       SubCategoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'categoria_id' => '1',
         'nombre' => 'Logica',
       ]);
 
       SubCategoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'categoria_id' => '1',
         'nombre' => 'Divisiones',
       ]);
 
 
       SubCategoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'categoria_id' => '2',
         'nombre' => 'Gramatica',
       ]);
       SubCategoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'categoria_id' => '2',
         'nombre' => 'Conjugacion',
       ]);
       SubCategoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'categoria_id' => '2',
         'nombre' => 'Lecturas',
       ]);
 
 
       SubCategoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'categoria_id' => '3',
         'nombre' => 'Grammar',
       ]);
       SubCategoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'categoria_id' => '3',
         'nombre' => 'Reading',
       ]);
       SubCategoria::create([
-        'user_id' => '2',
+        'universidad_id' => '1',
         'categoria_id' => '3',
         'nombre' => 'Conjugations',
       ]);

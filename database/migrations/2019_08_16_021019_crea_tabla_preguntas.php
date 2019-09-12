@@ -15,7 +15,7 @@ class CreaTablaPreguntas extends Migration
     {
         Schema::create('preguntas', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('universidad_id');
             $table->unsignedInteger('subcategoria_id');
             $table->text('pregunta');
             $table->string('imagen');
@@ -24,9 +24,9 @@ class CreaTablaPreguntas extends Migration
             $table->string('opcion3');
             $table->string('respuesta');
             $table->timestamps();
-            $table->foreign('user_id')
+            $table->foreign('universidad_id')
               ->references('id')
-              ->on('users')
+              ->on('universidades')
               ->onDelete('cascade');
             $table->foreign('subcategoria_id')
               ->references('id')

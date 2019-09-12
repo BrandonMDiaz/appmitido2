@@ -15,15 +15,15 @@ class CreaTablaCategorias extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('universidad_id');
             $table->string('nombre');
             $table->timestamps();
 
-            $table->foreign('user_id')
+            $table->foreign('universidad_id')
               ->references('id')
-              ->on('users')
+              ->on('universidades')
               ->onDelete('cascade');
-          
+
         });
     }
 
