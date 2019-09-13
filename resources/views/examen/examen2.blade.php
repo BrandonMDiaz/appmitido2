@@ -2,20 +2,78 @@
 
 @section('content')
 
-<div id="my-modal" class="modal">
-  <div class="modal-exam">
-    <h1>EXAMEN DE MATEMATICAS!!</h1>
-    <h4>Estas por iniciar un examen de matematicas, este examen
-      contiene 10 preguntas que tendras que responder en un lapso de 10 minutos.
-    </h4>
-    <br>
-    <h5>Presiona el boton cuando estes listo</h5>
-    <button type="button" name="button" onclick="empezar()">Empezar</button>
+  <div id="my-modal" class="modal">
+    <div class="modal-exam">
+      <h1>EXAMEN DE MATEMATICAS!!</h1>
+      <h4>Estas por iniciar un examen de matematicas, este examen
+        contiene 10 preguntas que tendras que responder en un lapso de 10 minutos.
+      </h4>
+      <br>
+      <h5>Presiona el boton cuando estes listo</h5>
+      <button type="button" name="button" onclick="empezar()">Empezar</button>
+    </div>
   </div>
-</div>
 
 
   {{-- <div class="examen"> --}}
+
+  <div  class="preguntas-lista">
+    <div class="titulo">
+      <p>Examen de matematicas</p>
+    </div>
+    <div id='preg2' class="preguntas-todas">
+      @foreach ($preguntas as $pregunta)
+        <div id="pregCompl-{{$loop->index + 1}}" class="main-pregunta">
+          <div class="contador-pregunta">
+            <p>Pregunta {{$loop->index + 1}} de 10</p>
+          </div>
+          <div class="pregunta">
+            <p id='pregunta-{{$loop->index + 1}}'>
+              {{$pregunta->pregunta}}</p>
+          </div>
+          <div class="opciones">
+            <div id="1{{$loop->index}}op" class="opcion">
+              <div id="1{{$loop->index}}div" class="en-linea">
+                <input type="radio" onclick="preguntaContestada({{'1' . $loop->index }})" name="answer" />
+                <p>a)</p>
+              </div>
+              <p  id="1{{$loop->index}}">{{$pregunta->opcion1}}</p>
+            </div>
+            <div id="2{{$loop->index}}op" class="opcion">
+              <div id="2{{$loop->index}}div" class="en-linea">
+                <input type="radio" onclick="preguntaContestada({{'2' . $loop->index }})" name="answer" />
+                <p>b)</p>
+              </div>
+              <p id="2{{$loop->index}}">{{$pregunta->opcion2}}</p>
+
+              {{-- <button type="button" onclick="preguntaContestada(this.id)" name="button">{{$pregunta->opcion2}}</button> --}}
+            </div>
+            <div id="3{{$loop->index}}op" class="opcion">
+              <div id="3{{$loop->index}}div" class="en-linea res-mala-div">
+                <input type="radio" onclick="preguntaContestada({{'3' . $loop->index }})" name="answer" />
+                <p>c)</p>
+                <i class="fas fa-times res-mala"></i>
+              </div>
+              <p id="3{{$loop->index}}">{{$pregunta->opcion3}}</p>
+              {{-- <button id="3{{$loop->index}}" type="button" onclick="preguntaContestada(this.id)" name="button">{{$pregunta->opcion3}}</button> --}}
+            </div>
+            <div id="4{{$loop->index}}op" class="opcion">
+              <div id="4{{$loop->index}}div" class="en-linea res-buena-div">
+                <input type="radio" onclick="preguntaContestada({{'4' . $loop->index }})"  name="answer" />
+                <p>d)</p>
+                <i class="fas fa-check res-buena"></i>
+              </div>
+              <p id="4{{$loop->index}}">{{$pregunta->respuesta}}</p>
+              {{-- <button id="4{{$loop->index}}" type="button" onclick="preguntaContestada(this.id)" name="button">{{$pregunta->respuesta}}</button> --}}
+            </div>
+          </div>
+
+        </div>
+      @endforeach
+    </div>
+
+  </div>
+  <div class="barra-preguntas sticky2">
     <div class="tiempo">
       <p id="timer">
         <span id="timer-min">10</span>
@@ -23,64 +81,8 @@
         <span id="timer-sec">00</span>
       </p>
     </div>
-    <div  class="preguntas-lista">
-      <div class="contador-pregunta">
-        <p>Pregunta <span>1</span> de 10</p>
-      </div>
-      <div id='preg2' class="preguntas-todas">
-        @foreach ($preguntas as $pregunta)
-          <div id="pregCompl-{{$loop->index + 1}}" class="main-pregunta">
-
-            <div class="pregunta">
-              <p id='pregunta-{{$loop->index + 1}}'>{{$pregunta->pregunta}}</p>
-            </div>
-            <div class="opciones">
-              <div id="1{{$loop->index}}op" class="opcion">
-                <div id="1{{$loop->index}}div" class="en-linea">
-                  <input type="radio" onclick="preguntaContestada({{'1' . $loop->index }})" name="answer" />
-                  <p>a)</p>
-                </div>
-                <p  id="1{{$loop->index}}">{{$pregunta->opcion1}}</p>
-              </div>
-              <div id="2{{$loop->index}}op" class="opcion">
-                <div id="2{{$loop->index}}div" class="en-linea">
-                  <input type="radio" onclick="preguntaContestada({{'2' . $loop->index }})" name="answer" />
-                  <p>b)</p>
-                </div>
-                <p id="2{{$loop->index}}">{{$pregunta->opcion2}}</p>
-
-                {{-- <button type="button" onclick="preguntaContestada(this.id)" name="button">{{$pregunta->opcion2}}</button> --}}
-              </div>
-              <div id="3{{$loop->index}}op" class="opcion">
-                <div id="3{{$loop->index}}div" class="en-linea res-mala-div">
-                  <input type="radio" onclick="preguntaContestada({{'3' . $loop->index }})" name="answer" />
-                  <p>c)</p>
-                  <i class="fas fa-times res-mala"></i>
-                </div>
-                <p id="3{{$loop->index}}">{{$pregunta->opcion3}}</p>
-                {{-- <button id="3{{$loop->index}}" type="button" onclick="preguntaContestada(this.id)" name="button">{{$pregunta->opcion3}}</button> --}}
-              </div>
-              <div id="4{{$loop->index}}op" class="opcion">
-                <div id="4{{$loop->index}}div" class="en-linea res-buena-div">
-                  <input type="radio" onclick="preguntaContestada({{'4' . $loop->index }})"  name="answer" />
-                  <p>d)</p>
-                  <i class="fas fa-check res-buena"></i>
-                </div>
-                <p id="4{{$loop->index}}">{{$pregunta->respuesta}}</p>
-                {{-- <button id="4{{$loop->index}}" type="button" onclick="preguntaContestada(this.id)" name="button">{{$pregunta->respuesta}}</button> --}}
-              </div>
-            </div>
-
-          </div>
-        @endforeach
-      </div>
-
-    </div>
-    <div class="barra-preguntas">
-
-    </div>
-    <button type="button" name="button">Finalizar</button>
     <div class="numeros">
+      <p>Cambiar pregunta:</p>
       <ul>
         <li> <p id="<<" onclick="cambiarDePregunta(this.id)"> << </p> </li>
         <li> <p id="0-cp" class="selected" onclick="cambiarDePregunta(this.id)"> 1 </p> </li>
@@ -96,6 +98,11 @@
         <li> <p id=">>" onclick="cambiarDePregunta(this.id)"> >> </p> </li>
       </ul>
     </div>
+    <div class="boton-finalizar">
+      <button class="btn btn-primary" type="button" name="button">Finalizar</button>
+    </div>
+  </div>
+
   {{-- </div> --}}
 
   <script type="text/javascript" src="{{ asset('js/examen.js') }}">

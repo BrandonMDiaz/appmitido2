@@ -105,7 +105,7 @@ function showPregunta(id, odlId) {
   const size = preguntaTodas[0].getBoundingClientRect().width;
   preguntaLista.style.transition = 'transform 0.2s ease-in-out';
   preguntaLista.style.transform = 'translateX(' + (-size * currentIndex) + 'px)';
-  console.log(-size);
+  // console.log(-size);
 }
 
 function cambiarDePregunta(id) {
@@ -143,14 +143,14 @@ function cambiarDePregunta(id) {
 
 //cuando se selecciona una respuesta se activa esta funcion
 function preguntaContestada(pregunta){
-  console.log(pregunta);
+  // console.log(pregunta);
   let indexRespuesta = pregunta.toString();
   let texto = document.getElementById(pregunta);
 
   numOpcion[indexRespuesta[1]] = indexRespuesta[0];
   respuesta[indexRespuesta[1]] = texto.innerHTML;
-  console.log(numOpcion);
-  console.log(respuesta);
+  // console.log(numOpcion);
+  // console.log(respuesta);
 
 }
 
