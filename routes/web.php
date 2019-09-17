@@ -17,6 +17,9 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('landing.index');
 });
+Route::get('/perfil', function () {
+    return view('perfil.user');
+});
 // Route::get('/universidad', function () {
 //     return view('universidad.index');
 // });
