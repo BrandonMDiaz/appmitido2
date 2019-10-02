@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Persona;
+use App\ExamenPregunta;
 use Illuminate\Http\Request;
 
-class PersonaController extends Controller
+class ExamenPreguntaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PersonaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Persona  $persona
+     * @param  \App\ExamenPregunta  $examenPregunta
      * @return \Illuminate\Http\Response
      */
-    public function show(Persona $persona)
+    public function show(ExamenPregunta $examenPregunta)
     {
         //
     }
@@ -52,10 +52,10 @@ class PersonaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Persona  $persona
+     * @param  \App\ExamenPregunta  $examenPregunta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Persona $persona)
+    public function edit(ExamenPregunta $examenPregunta)
     {
         //
     }
@@ -64,10 +64,10 @@ class PersonaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Persona  $persona
+     * @param  \App\ExamenPregunta  $examenPregunta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Persona $persona)
+    public function update(Request $request, ExamenPregunta $examenPregunta)
     {
         //
     }
@@ -75,10 +75,10 @@ class PersonaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Persona  $persona
+     * @param  \App\ExamenPregunta  $examenPregunta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Persona $persona)
+    public function destroy(ExamenPregunta $examenPregunta)
     {
         //
     }

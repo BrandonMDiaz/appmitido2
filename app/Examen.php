@@ -14,6 +14,10 @@ class Examen extends Model
     return $query;
   }
 
+  static public function getEstadisticas($id){
+
+    return $query;
+  }
 
   /**Relacion 1 a 1**/
   public function categoria()

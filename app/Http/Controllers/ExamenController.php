@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Pregunta;
 use App\Examen;
+use App\Categoria;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\StatusExamen;
 
 class ExamenController extends Controller
 {
@@ -20,7 +25,12 @@ class ExamenController extends Controller
   */
   public function index()
   {
-    return view('examen.index');
+    $examen = Auth::user()->examen;
+    if(!StatusExamen::haveExam($examen)){
+      return redirect('/universidad');
+    }
+    $categorias = Categoria::getCategoria($examen);
+    return view('examen.index',compact('categorias'));
   }
 
   /**
@@ -59,6 +69,7 @@ class ExamenController extends Controller
   */
   public function show(Examen $examen)
   {
+    // $categoria = $examen->
     $preguntas = Pregunta::get10preguntas();
     return view('examen.examen2', compact('preguntas'));
   }

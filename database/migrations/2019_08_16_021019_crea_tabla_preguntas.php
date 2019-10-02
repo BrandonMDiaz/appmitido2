@@ -23,6 +23,7 @@ class CreaTablaPreguntas extends Migration
             $table->string('opcion2');
             $table->string('opcion3');
             $table->string('respuesta');
+            
             $table->timestamps();
             $table->foreign('universidad_id')
               ->references('id')

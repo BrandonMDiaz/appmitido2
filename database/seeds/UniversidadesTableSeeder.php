@@ -13,10 +13,11 @@ class UniversidadesTableSeeder extends Seeder
     public function run()
     {
       Universidad::create([
-        'user_id' => '2',
+        'name' => 'UdG',
+        'email' => 'udg@gmail.com',
         'logo' => 'holi',
-        'nombre' => 'UdG',
-        'ubicacion' => 'Volcan Cofre de Perote',
+        'password' => bcrypt('12345678'),
+        'remember_token' => Str::random(10),
       ]);
     }
 }

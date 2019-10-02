@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Tutorial;
 use Illuminate\Http\Request;
+use App\Http\Controllers\StatusExamen;
 
 class TutorialController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('Auth');
+  }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,7 @@ class TutorialController extends Controller
      */
     public function index()
     {
-      
+
         return view('tutoriales.tutoriales');
     }
 
