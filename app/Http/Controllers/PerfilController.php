@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Examen;
 use Illuminate\Http\Request;
 
 class PerfilController extends Controller
@@ -10,8 +11,11 @@ class PerfilController extends Controller
   {
     $this->middleware('auth');
   }
+
   public function perfil()
   {
-    return view('perfil.user');
+    $categorias = Categoria::getExamen($examen ,Auth::user()->id);
+
+    return view('perfil.user', compact('categorias'));
   }
 }

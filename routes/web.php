@@ -10,10 +10,14 @@ Route::get('/universidad','UniversidadController@index' );
 Route::get('/tutoriales', 'TutorialController@index');
 
 // Route::get('/examen', 'ExamenController@index');
-Route::resource('examen', 'ExamenController');
 Route::resource('categorias', 'CategoriaController');
 Route::resource('subcategorias', 'SubCategoriaController');
 Route::resource('preguntas', 'PreguntaController');
+
+Route::resource('examen', 'ExamenController');
+Route::get('/examen/resultados', 'ExamenController@resultados');
+Route::get('/examen/resultados/{examen}', 'ExamenController@resultadosShow');
+
 
 Auth::routes();
 

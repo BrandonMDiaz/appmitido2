@@ -5,7 +5,7 @@
 .nav-item{
   z-index: 100;
 }
-.show{
+.show-1{
   z-index: 100;
 }
 
@@ -452,7 +452,7 @@ li h5{
   padding: 3%;
 }
 
-.modal{
+.modal-1{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -487,7 +487,7 @@ li h5{
 }
 .selected{
   color: white;
-  background-color: red;
+  background-color: #fcba03;
 }
 
 .numeros ul li p:hover{
@@ -616,8 +616,8 @@ li h5{
 .en-linea{
   display:flex;
   /* width: 100%; */
-  /* justify-content: space-between; */
-  align-items: center;
+  justify-content: space-between;
+  align-items: baseline;
   /* margin-bottom: 5px; */
   padding: 5px;
   border-radius: 3px;
@@ -848,4 +848,47 @@ li h5{
 .estudia-header2 h1{
   margin-bottom: 20px;
 
+}
+
+/********Resultados**********/
+
+.centrar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.wrapper-re{
+  /* background-color: #c4f5c9; */
+  width: 50%;
+  padding: 1%;
+}
+.titulo-re{
+  background-color: #f7fac3;
+  padding: 3%;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+.tutoriales-recomendados{
+  display: flex;
+  justify-content: space-between;
+}
+.res-titulo{
+  /* justify-content: space-between; */
+  font-size: 20px;
+}
+.res-titulo h3{
+  /* justify-content: space-between; */
+  margin-left: 10px;
+}
+.mal-res{
+  background-color:#ff000052;
+}
+.bie-res{
+  background-color: #00800052;
+}
+.numeros ul li{
+  width: 7.8%;
+  display: flex;
+  justify-content: center;
 }

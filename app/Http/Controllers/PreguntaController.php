@@ -44,8 +44,9 @@ class PreguntaController extends Controller
   */
   public function store(Request $request)
   {
+
     $request->validate([
-    'preguna' => 'required|max:255',
+    'pregunta' => 'required|max:255',
     'categoria_id' => 'required|numeric',
     ]);
     $sub = new SubCategoria();

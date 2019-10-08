@@ -39,6 +39,6 @@ class CreateExamenpreguntaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('examenpregunta');
+        Schema::dropIfExists('examen_pregunta');
     }
 }
