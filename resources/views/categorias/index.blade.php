@@ -20,6 +20,8 @@
                   <tr>
                       <th>ID</th>
                       <th>Categoria</th>
+                      <th></th>
+
                   </tr>
               </thead>
               <tbody>

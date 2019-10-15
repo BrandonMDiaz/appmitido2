@@ -1,21 +1,4 @@
 
-
-var marksCanvas = document.getElementById("myChart");
-
-var marksData = {
-  labels: ["English", "Maths", "Spanish"],
-  datasets: [{
-    label: "Student A",
-    backgroundColor: "rgba(200,0,0,0.2)",
-    data: [65, 75, 70]
-  },]
-};
-
-var radarChart = new Chart(marksCanvas, {
-  type: 'radar',
-  data: marksData
-});
-
 var tot = document.getElementById("total").innerHTML;
 for (var i = 0; i < tot; i++) {
   const obj = JSON.parse(document.getElementById(`data${i}`).innerHTML);

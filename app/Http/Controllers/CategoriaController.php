@@ -17,7 +17,7 @@ class CategoriaController extends Controller
   public function index()
   {
     $universidad_id = Auth::guard('universidad')->id();
-    $categorias = Categoria::getCategoria($universidad_id);
+    $categorias = Categoria::getCategorias($universidad_id);
     return view('categorias.index', compact('categorias'));
   }
 

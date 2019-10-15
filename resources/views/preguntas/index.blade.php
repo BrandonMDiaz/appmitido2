@@ -8,7 +8,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-8 offset-2">
+    <div class="col-md-12 offset-0">
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">LISTADO DE PREGUNTAS</h3>
@@ -19,13 +19,13 @@
             <thead>
               <tr>
                 <th>SUBCATEGORIA</th>
-                <th>ID</th>
                 <th>PREGUNTA</th>
                 <th>IMAGEN</th>
-                <th>OPCION1</th>
-                <th>OPCION2</th>
-                <th>OPCION3</th>
+                <th>OPCION</th>
+                <th>OPCION</th>
+                <th>OPCION</th>
                 <th>RESPUESTA</th>
+                <th></th>
 
 
               </tr>
@@ -70,8 +70,8 @@
                     <td>{{ $preg->respuesta }}</td>
 
                     <td>
-                      <a href="{{ route('subcategorias.edit', $preg->id) }}" class="btn btn-sm btn-warning">Editar</a>
-                      <form action="{{ route('subcategorias.destroy', $preg->id) }}" method="POST">
+                      <a href="{{ route('preguntas.edit', $preg->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                      <form action="{{ route('preguntas.destroy', $preg->id) }}" method="POST">
                         <input type="hidden" name="_method" value="DELETE">
                         @csrf
                         <button type="submit" class="btn btn-sm btn-danger">Borrar</button>

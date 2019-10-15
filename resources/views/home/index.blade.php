@@ -65,16 +65,49 @@
           </p>
         </div>
         <div class="categorias-examenes">
-          @foreach ($categorias as $categoria)
-            {{-- <a href="{{route("",[$categoria->id])}}"> --}}
+
+          <div class="lista-categorias ">
+            <p class="hide">Total de categorias: <span id="total">{{count($categorias)}}</span></p>
+            @foreach ($categorias as $categoria)
+              <p class="hide" id="data{{$loop->index}}"> {{$categoria->examenes}} </p>
+              <div class="wid">
+                <div class="body-exam">
+                  <div class="tit-cat">
+                    <p>{{$categoria->nombre}}</hp>
+                  </div>
+                  <ul class="body-cat">
+                    <p>Examenes realizados: {{count($categoria->examenes)}}</p>
+                    <p>Porcentaje de aciertos: {{$data->promedioCat[$loop->index]}}%</p>
+                    <a href="{{ route('examen.show', ['id' => $categoria->id]) }}" class="btn btn-primary"> Hacer un examen</a>
+                  </ul>
+
+                </div>
+                <div class="chart-exam">
+                  <div class="chart">
+                    <canvas id="chart{{$loop->index}}" width="200" height="200"></canvas>
+                  </div>
+                  <div style="display:flex; justify-content: flex-end;">
+                    <a href="{{ route('resultados.index') }}">Ver exámenes</a>
+                  </div>
+                </div>
+              </div>
+            @endforeach
+          </div>
+
+
+
+
+
+          {{-- <a href="{{route("",[$categoria->id])}}"> --}}
+          {{-- @foreach ($categorias as $categoria)
             <div class="categoria-examen-2">
               <img src="{{URL::asset('/images/math.jpg')}}" class="categoria-examen-img">
               <div class="categoria-examen-body">
                 <p class="nombre-categoria-2">{{$categoria->nombre}}</p>
               </div>
             </div>
-            {{-- </a> --}}
-          @endforeach
+          @endforeach --}}
+          {{-- </a> --}}
 
         </div>
       </div>

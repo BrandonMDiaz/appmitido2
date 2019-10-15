@@ -20,7 +20,6 @@ class PreguntaController extends Controller
     $universidad_id = Auth::guard('universidad')->id();
     $subcategorias = SubCategoria::getPreguntas($universidad_id);
     return view('preguntas.index', compact('subcategorias'));
-
   }
 
   /**
@@ -46,8 +45,8 @@ class PreguntaController extends Controller
   {
 
     $request->validate([
-    'pregunta' => 'required|max:255',
-    'categoria_id' => 'required|numeric',
+      'pregunta' => 'required|max:255',
+      'categoria_id' => 'required|numeric',
     ]);
     $sub = new SubCategoria();
     $sub->nombre = $request->input('nombre');
@@ -76,7 +75,9 @@ class PreguntaController extends Controller
   */
   public function edit(Pregunta $pregunta)
   {
-    //
+    $subcategorias = SubCategoria::where('universidad_id', '=', $pregunta->universidad_id)
+    ->get();
+    return view('preguntas.create', compact('pregunta', 'subcategorias'));
   }
 
   /**
@@ -88,7 +89,29 @@ class PreguntaController extends Controller
   */
   public function update(Request $request, Pregunta $pregunta)
   {
-    //
+    $request->validate([
+    'pregunta' => 'required',
+    'subcategoria_id' => 'required|numeric',
+    'opc1' => 'required',
+    'opc2' => 'required',
+    'opc3' => 'required',
+    'resp' => 'required',
+    'img' => 'image|nullable',
+    ]);
+
+    $pregunta->pregunta = $request->input('pregunta');
+    $pregunta->subcategoria_id = $request->input('subcategoria_id');
+    $pregunta->universidad_id = Auth::guard('universidad')->id();
+
+      $pregunta->imagen = $request->input('img');
+
+    $pregunta->opcion1 = $request->input('opc1');
+    $pregunta->opcion2 = $request->input('opc2');
+    $pregunta->opcion3 = $request->input('opc3');
+    $pregunta->respuesta = $request->input('resp');
+
+    $pregunta->save();
+    return redirect()->route('preguntas.index');
   }
 
   /**

@@ -27,17 +27,44 @@ class ExamenController extends Controller
   */
   public function index()
   {
-    //funcion para ver si el usuario tiene un examenUniversidad
-    //en sus parametros diferente de 0
+    /*funcion para ver si el usuario tiene un examenUniversidad
+    en sus parametros diferente de 0*/
     $examen = Auth::user()->examen;
     if(!StatusExamen::haveExam($examen)){
       return redirect('/universidad');
     }
 
     $categorias = Categoria::getExamen($examen ,Auth::user()->id);
-    return view('examen.index',compact('categorias'));
+    $data = $this->estadisticas($categorias);
+
+    return view('examen.index',compact('categorias', 'data'));
   }
 
+  private function estadisticas($categorias){
+    $obj =  new \stdClass;
+    $obj->promedioCat = array();
+    $obj->respuestaCorr = array();
+    $obj->respuestaCorrPorExamen = array();
+    $temp = 0;
+    $repCorr = 0;
+    $contador = 0;
+    foreach ($categorias as $categoria) {
+      $contador = 0;
+      $obj->respuestaCorrPorExamen[] = array();
+      foreach ($categoria->examenes as $examen) {
+        $temp = $examen->calificacion + $temp;
+        $repCorr = $repCorr + $examen->calificacion;
+        $contador++;
+      }
+      $obj->respuestaCorr[] = $temp;
+      if($contador == 0){
+        $obj->promedioCat[] = 0;
+      }else{
+        $obj->promedioCat[] = ($repCorr/($contador*10)) * 100;
+      }
+    }
+    return $obj;
+  }
   /**
   * Show the form for creating a new resource.
   *
@@ -92,9 +119,11 @@ class ExamenController extends Controller
   }
 
   //Mostrar lista de resultados
-  public function resultados(Request $request)
+  public function resultados()
   {
-
+    $examen = Auth::user()->examen;
+    $categorias = Categoria::getExamen($examen, Auth::user()->id);
+    return view('examen.resultados', compact('categorias'));
   }
 
   //Mostrar un resultado en especifico

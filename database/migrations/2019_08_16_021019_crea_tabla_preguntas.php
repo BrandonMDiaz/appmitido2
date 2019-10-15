@@ -18,12 +18,12 @@ class CreaTablaPreguntas extends Migration
             $table->unsignedInteger('universidad_id');
             $table->unsignedInteger('subcategoria_id');
             $table->text('pregunta');
-            $table->string('imagen');
+            $table->string('imagen')->nullable();
             $table->string('opcion1');
             $table->string('opcion2');
             $table->string('opcion3');
             $table->string('respuesta');
-            
+
             $table->timestamps();
             $table->foreign('universidad_id')
               ->references('id')

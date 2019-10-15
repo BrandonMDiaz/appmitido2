@@ -21,7 +21,7 @@ class SubCategoria extends Model
   /**Relacion 1 a muchos**/
   public function preguntas()
   {
-    return $this->hasMany('App\Pregunta');
+    return $this->hasMany('App\Pregunta','subcategoria_id');
   }
 
   /**Relacion 1 a muchos inversa**/
@@ -37,9 +37,9 @@ class SubCategoria extends Model
    }
 
    static public function getPreguntas($id){
-     $query = SubCategoria::with('pregunta')
+     $query = SubCategoria::where('universidad_id', '=', $id)
+     ->with('preguntas')
                      // ->where('categoria.user_id', '=', $id)
-                     ->where('universidad_id', '=', $id)
                      ->get();
      return $query;
    }

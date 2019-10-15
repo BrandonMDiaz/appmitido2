@@ -10,7 +10,6 @@ class LandingController extends Controller
   {
     $this->middleware('guest');
     $this->middleware('guest:universidad');
-
   }
 
   public function index()
@@ -18,6 +17,6 @@ class LandingController extends Controller
     return view('landing.index');
   }
 
-  
+
 
 }

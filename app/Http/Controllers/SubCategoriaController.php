@@ -19,7 +19,7 @@ class SubCategoriaController extends Controller
   public function index()
   {
     $universidad_id = Auth::guard('universidad')->id();
-    $categorias = Categoria::getCategoria($universidad_id);
+    $categorias = Categoria::getCategorias($universidad_id);
     // $subcategorias = SubCategoria::where('universidad_id', '=', $universidad_id)->get();
     // return view('subcategorias.index', compact('subcategorias'));
     return view('subcategorias.index', compact('categorias'));
@@ -34,7 +34,7 @@ class SubCategoriaController extends Controller
   public function create()
   {
     $universidad_id = Auth::guard('universidad')->id();
-    $categorias = Categoria::getCategoria($universidad_id);
+    $categorias = Categoria::getCategorias($universidad_id);
     return view('Subcategorias.crear', compact('categorias'));
   }
 

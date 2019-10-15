@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 class UniversidadController extends Controller
 {
 
+
+  public function universidad(){
+    return view('home.universidad');
+  }
     /**
      * Display a listing of the resource.
      *
