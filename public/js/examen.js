@@ -94,7 +94,6 @@ function finalizar() {
   //modificamos el value de calificacion
   cal.value = aciertos;
   document.getElementById("exam-form").submit();
-
 }
 
 function examen(){

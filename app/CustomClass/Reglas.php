@@ -36,6 +36,7 @@ class Regla
     $contadorArrayRes = 0;
     //guardamos los resultados pasados
     $arrayResultados = [];
+
     //checamos las condicines de la regla a ver si genera otro atomo
     foreach ($this->conectoresLogicos as $conector) {
       /* si nuestra regla solo tiene dos atomos usamos el primer if
@@ -94,7 +95,8 @@ class Regla
         $contador++;
         $contadorArrayRes++;
       }
-    }
+    } 
+
     //regresamos true o false dependiendo si genera el atomo o no
     return end($arrayResultados);
   }

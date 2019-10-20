@@ -8,37 +8,41 @@ use Illuminate\Http\Request;
 class VocacionController extends Controller
 {
 
+  public function index(){
+    return view('orientador.index');
+  }
+
+  public function test(){
+    return view('orientador.test');
+  }
 
   public function orientador(Request $request){
 
     $carrera = [];
     $arrayAtomos = [];
 
-		if($request->linguistico_verbal > 35){
+		if($request->linguistico_verbal == 1){
       $arrayAtomos[] = 'lingüístico-verbal';
 		}
-		if($request->mate > 35){
-      $arrayAtomos[] = 'lógico-matematico';
+		if($request->mate == 1){
+      $arrayAtomos[] = 'lógico-matemático';
 
 		}
-		if($request->espacio_visual > 35){
+		if($request->espacio_visual == 1){
       $arrayAtomos[] = 'espacio-visual';
 		}
-		if($request->interpersonal > 35){
+		if($request->interpersonal == 1){
       $arrayAtomos[] = 'interpersonal';
-
 		}
-		if($request->creativa > 28){
+		if($request->creativa == 1){
       $arrayAtomos[] = 'creativa';
 		}
-    $arrayAtomos = ['creativa','interpersonal','espacio-visual', 'lógico-matemático'];
-
+    if($request->intrapersonal == 1){
+      $arrayAtomos[] = 'intrapersonal';
+    }
     $carrera = SBC::runSBC($arrayAtomos);
     dd($carrera);
-  }
-
-  public function reglas(){
-
+    return view('orientador.resultado', compact('carrera'));
   }
 
 }

@@ -51,8 +51,11 @@ class InferenceMachine
       }
       //si es atomo objetivo y está en la memoria de trabajo hay que regresarlo
       if($reg->generaObjetivo){
+
+        // if($reg->atomoGenerado == 'Psicologia'){
+        // }
+
         //agregar data en caso que hagas bien la clase atomo y los arrays de objetos
-        //
         if($memoria->atomoPresente($reg->atomoGenerado)){
           /* aqui en vez de regresar el primero que funcione, podiras regresar
           una lista con todos los resultados objetivos posibles */

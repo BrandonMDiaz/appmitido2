@@ -1,8 +1,8 @@
 <nav class="sticky contenedor2 background-col">
-  <div class='logo2'>
-    <img class='icono2' src="{{URL::asset('/images/icon.png')}}"/>
-    <h2>Appmitido</h2>
-  </div>
+    <a class='logo2' href="{{ route('landing') }}">
+      <img class='icono2' src="{{URL::asset('/images/icon.png')}}"/>
+      <h2>Appmitido</h2>
+    </a>
 
   <ul class="contenedor-navbar2 background-col">
     <li>
