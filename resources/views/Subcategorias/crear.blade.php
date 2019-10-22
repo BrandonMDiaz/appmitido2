@@ -25,7 +25,12 @@
               </div>
               <div class="form-group">
                 <label class="form-label">Nombre de la subcategoria</label>
-                <input type="text" class="form-control" name="nombre" value="{{ isset($subcategoria) ? $subcategoria->nombre : '' }}" placeholder="Subcategoria....">
+                <input type="text" class="form-control  @error('nombre') is-invalid @enderror" name="nombre" value="{{ isset($subcategoria) ? $subcategoria->nombre : '' }}" placeholder="Subcategoria....">
+                @error('nombre')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
               </div>
               <button type="submit" class="btn btn-primary ml-auto">Aceptar</button>
             </form>

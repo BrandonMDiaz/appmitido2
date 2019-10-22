@@ -17,7 +17,12 @@
               @csrf
               <div class="form-group">
                 <label class="form-label">Nombre de la categoria</label>
-                <input type="text" class="form-control" name="nombre" value="{{ isset($categoria) ? $categoria->nombre : '' }}" placeholder="Categoria...">
+                <input type="text" class="form-control @error('nombre') is-invalid @enderror" name="nombre" value="{{ isset($categoria) ? $categoria->nombre : '' }}" placeholder="Categoria...">
+                @error('nombre')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
               </div>
               <button type="submit" class="btn btn-primary ml-auto">Aceptar</button>
             </form>

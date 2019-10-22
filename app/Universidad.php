@@ -20,7 +20,7 @@ class Universidad extends Authenticatable
    * @var array
    */
   protected $fillable = [
-       'email', 'password', 'logo', 'ubicacion'
+       'email', 'password', 'logo', 'name'
   ];
 
   /**

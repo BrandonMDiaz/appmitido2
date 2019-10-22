@@ -57,15 +57,16 @@
             <div class="opciones">
               <div id="1{{$loop->index}}op" class="opcion">
                 <p>a)</p>
-                <div id="1{{$loop->index}}div" class="en-linea">
-                  {!! $pregunta->pivot->pregunta_seleccionada == $pregunta->opcion1 ? "<i class='fas fa-times res-mala'></i>" : ''!!}
+                <div id="1{{$loop->index}}div" class="en-linea {{$pregunta->pivot->respuesta_seleccionada == $pregunta->opcion1 ? "res-mala-div" : ''}}">
+
+                  {!! $pregunta->pivot->respuesta_seleccionada == $pregunta->opcion1 ? "<i class='fas fa-times res-mala'></i>" : ''!!}
                   <p id="1{{$loop->index}}">{{$pregunta->opcion1}}</p>
                 </div>
               </div>
               <div id="2{{$loop->index}}op" class="opcion">
                 <p>b)</p>
-                <div id="2{{$loop->index}}div" class="en-linea">
-                  {!! $pregunta->pivot->pregunta_seleccionada == $pregunta->opcion2 ? "<i class='fas fa-times res-mala'></i>" : ''!!}
+                <div id="2{{$loop->index}}div" class="en-linea {{$pregunta->pivot->respuesta_seleccionada == $pregunta->opcion2 ? "res-mala-div" : ''}}">
+                  {!! $pregunta->pivot->respuesta_seleccionada == $pregunta->opcion2 ? "<i class='fas fa-times res-mala'></i>" : ''!!}
 
                   <p id="2{{$loop->index}}">{{$pregunta->opcion2}}</p>
                 </div>
@@ -74,8 +75,8 @@
               </div>
               <div id="3{{$loop->index}}op" class="opcion">
                 <p>c)</p>
-                <div id="3{{$loop->index}}div" class="en-linea">
-                  {!! $pregunta->pivot->pregunta_seleccionada == $pregunta->opcion3 ? "<i class='fas fa-times res-mala'></i>" : ''!!}
+                <div id="3{{$loop->index}}div" class="en-linea {{$pregunta->pivot->respuesta_seleccionada == $pregunta->opcion3 ? "res-mala-div" : ''}}">
+                  {!! $pregunta->pivot->respuesta_seleccionada == $pregunta->opcion3 ? "<i class='fas fa-times res-mala'></i>" : ''!!}
                   <p id="3{{$loop->index}}">{{$pregunta->opcion3}}</p>
                 </div>
                 {{-- <button id="3{{$loop->index}}" type="button" onclick="preguntaContestada(this.id)" name="button">{{$pregunta->opcion3}}</button> --}}
@@ -84,8 +85,8 @@
                 <p>d)</p>
                 <div id="4{{$loop->index}}div" class="en-linea res-buena-div ">
                   {{-- {!! $pregunta->pivot->correcta == 1 ? "res-buena-div" : "res-mala-div" !!} --}}
-                  {{-- {!! $pregunta->pivot->correcta == 1 ? "<i class='fas fa-check res-buena'></i>" : "<i class='fas fa-times res-mala'></i>" !!} --}}
-                  <i class='fas fa-check res-buena'></i>
+                  {!! $pregunta->pivot->correcta == 1 ? "<i class='fas fa-check res-buena'></i>" : "" !!}
+                  {{-- <i class='fas fa-check res-buena'></i> --}}
                   <p id="4{{$loop->index}}">{{$pregunta->respuesta}}</p>
                 </div>
                 {{-- <button id="4{{$loop->index}}" type="button" onclick="preguntaContestada(this.id)" name="button">{{$pregunta->respuesta}}</button> --}}

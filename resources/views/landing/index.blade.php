@@ -64,9 +64,9 @@
                     <button type="submit" class="btn btn-primary">
                       {{ __('Login') }}
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <a href="{{'register'}}" class="btn btn-primary">
                       Registrarse
-                    </button>
+                    </a>
                     {{-- </div> --}}
                     @if (Route::has('password.request'))
                       <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -110,7 +110,7 @@
                   <div class="col-md-6 offset-md-4">
                     <div class="form-check">
                         <input type="checkbox" name="rememberU" class="form-check-input" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
-                        <label for="rememberU" class="form-check-label">  
+                        <label for="rememberU" class="form-check-label">
                         </label>
                     </div>
                   </div>
@@ -121,7 +121,7 @@
                     <button type="submit" class="btn btn-primary">
                       {{ __('Login') }}
                     </button>
-                    <a  href="{{ route('password.request') }}" class="btn btn-primary">
+                    <a  href="{{ route('registerU') }}" class="btn btn-primary">
                       Registrarse
                     </a>
                     {{-- </div> --}}

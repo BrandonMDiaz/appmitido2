@@ -14,7 +14,7 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="{{route('vocacion.index')}}">
         <h5> Test vocacional </h5>
       </a>
     </li>

@@ -41,7 +41,6 @@ class VocacionController extends Controller
       $arrayAtomos[] = 'intrapersonal';
     }
     $carrera = SBC::runSBC($arrayAtomos);
-    dd($carrera);
     return view('orientador.resultado', compact('carrera'));
   }
 

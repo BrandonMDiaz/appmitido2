@@ -4,8 +4,8 @@
 
   <div id="my-modal" class="modal modal-1">
     <div class="modal-exam">
-      <h1>EXAMEN DE MATEMATICAS!!</h1>
-      <h4>Estas por iniciar un examen de matematicas, este examen
+      <h1>Examen de {{$nombre}}!!</h1>
+      <h4>Estas por iniciar un examen de {{$nombre}}, este examen
         contiene 10 preguntas que tendras que responder en un lapso de 10 minutos.
       </h4>
       <br>
@@ -19,7 +19,7 @@
 
   <div  class="preguntas-lista">
     <div class="titulo">
-      <p>Examen de matematicas</p>
+      <p>Examen de {{$nombre}}</p>
     </div>
     <form id="exam-form" action="{{ route('examen.store') }}" method="POST">
       @csrf

@@ -84,13 +84,12 @@ class ExamenController extends Controller
   public function store(Request $request)
   {
 
-    $request->validate([
-    'calificacion' => 'required|numeric',
-    'tiempo' => 'required|numeric',
-    'preg.*' => 'required|numeric',
-    'resp.*' => 'required|numeric',
-    'corr.*' => 'required|numeric',
-    ]);
+    // $request->validate([
+    // 'calificacion' => 'required|numeric',
+    // 'tiempo' => 'required|numeric',
+    // 'resp.*' => 'required|numeric',
+    // 'corr.*' => 'required|numeric',
+    // ]);
 
     $examen = new Examen();
     $examen->categoria_id = $request->categoria_id;
@@ -115,7 +114,7 @@ class ExamenController extends Controller
       $examenPre->correcta = $request->input("corr.$i");
       $examenPre->save();
     }
-    return redirect("/examen/resultados/$examen->id");
+    return redirect("resultados/$examen->id");
   }
 
   //Mostrar lista de resultados
@@ -156,7 +155,7 @@ class ExamenController extends Controller
     foreach ($examen->examenPregunta as $pregunta) {
       array_push($obj->respuestaSeleccionada, $pregunta->pivot->respuesta_seleccionada);
       if($pregunta->pivot->correcta == 1){
-          $obj->$correctas = $obj->$correctas + 1;
+          $obj->correctas = $obj->correctas + 1;
           if(!in_array($pregunta->subcategoria->nombre, $obj->categoriaB)){
             array_push($obj->categoriaB, $pregunta->subcategoria->nombre);
           }
@@ -167,6 +166,7 @@ class ExamenController extends Controller
         }
       }
     }
+
     return $obj;
   }
 
@@ -180,7 +180,11 @@ class ExamenController extends Controller
   {
     $categoria = Categoria::getCategoria($id);
     $preguntas = Pregunta::get10preguntas($categoria[0]);
-    return view('examen.examen2', compact('preguntas','id'));
+    if(count($preguntas) != 10){
+      return view('examen.missing');
+    }
+    $nombre = $categoria[0]->nombre;
+    return view('examen.examen2', compact('preguntas','id','nombre'));
   }
 
   /**

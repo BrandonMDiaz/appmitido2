@@ -8,9 +8,9 @@ use Faker\Generator as Faker;
 $factory->define(Pregunta::class, function (Faker $faker) {
     return [
         'universidad_id' => 1,
-        'SubCategoria_id' => $faker->numberBetween(1,3),
+        'SubCategoria_id' => $faker->numberBetween(2,9),
         'pregunta' => $faker->sentence(15),
-        'opcion1' => $faker->state,
+        'opcion1' => $faker->numberBetween(8,20),
         'opcion2' => $faker->numberBetween(8,1000),
         'opcion3' => $faker->numberBetween(1,3),
         'respuesta' => $faker->state,

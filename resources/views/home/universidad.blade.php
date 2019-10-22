@@ -2,5 +2,7 @@
 
 @section('content')
 
-universidad
+  <div class="centrar">
+    Bienvenido
+  </div>
 @endsection

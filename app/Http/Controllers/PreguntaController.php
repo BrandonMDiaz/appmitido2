@@ -45,7 +45,7 @@ class PreguntaController extends Controller
   {
 
     $request->validate([
-      'pregunta' => 'required|max:255',
+      'pregunta' => 'required',
       'categoria_id' => 'required|numeric',
     ]);
     $sub = new SubCategoria();

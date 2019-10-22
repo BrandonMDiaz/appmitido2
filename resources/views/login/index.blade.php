@@ -3,10 +3,10 @@
 @section('content')
 
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="margin-top:30px;">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header">Universidad </div>
+          <div class="card-header  black-card">Universidad</div>
           <div class="card-body">
             <form method="POST" action="{{ route('universidad-login') }}">
               @csrf
@@ -46,12 +46,8 @@
                   <button type="submit" class="btn btn-primary">
                     {{ __('Login') }}
                   </button>
-                  <button type="button" class="btn btn-primary">
+                  <a href="{{route('registerU')}}" class="btn btn-primary">
                     Registrarse
-                  </button>
-                  <a class="btn btn-link" href="{{ route('password.request') }}">
-
-                    {{ __('Forgot Your Password?') }}
                   </a>
                 </div>
               </div>

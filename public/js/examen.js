@@ -82,6 +82,8 @@ function finalizar() {
     let correcta = document.getElementById(`corr-${i}`);
     let resp= document.getElementById(`resp-${i}`);
     resp.value = respuesta[i];
+    // console.log(respuesta[i])
+    // console.log(respuestasCorrectas[i])
     if(respuesta[i] == respuestasCorrectas[i]){
       correcta.value = 1;
       aciertos++;

@@ -27,6 +27,9 @@ Route::get('/resultados/{examen}', 'ExamenController@resultadosShow')->name('res
 /*Autenticacion*/
 Auth::routes();
 Route::get('universidad-login', 'Auth\UniversidadLoginController@showLoginForm');
+Route::get('universidad-register', 'Auth\UniversidadRegisterController@showRegisterForm')->name('registerU');
+Route::post('universidad-register', ['as'=>'registrarU','uses'=>'Auth\UniversidadRegisterController@register']);
+
 Route::post('universidad-login', ['as'=>'universidad-login','uses'=>'Auth\UniversidadLoginController@login']);
 Route::post('universidad-logout', ['as'=>'universidad-logout','uses'=>'Auth\UniversidadLoginController@logout']);
 
