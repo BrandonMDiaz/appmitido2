@@ -4,14 +4,17 @@ let responseJson = {
   mate:0,
   espacio:0,
   interpersonal:0,
-  creativa:0
+  creativa:0,
+  intrapersonal:0,
+
 }
 let aptitudes = {
   linguistico_verbal: 0,
   mate: 0,
   espacio_visual:0,
   interpersonal:0,
-  creativa:0
+  creativa:0,
+  intrapersonal:0,
 }
 let indicePregunta = 0;
 let indexCarrera = 0;
@@ -81,89 +84,95 @@ function cambiarRespuestas(){
 // interpersonal 40	-	30	-28							50
 // cretividad 40		- 30		-28
 function analizarAptitudes(){
-  console.log(aptitudes);
-  if(aptitudes.linguistico_verbal > 30){
+  if(aptitudes.linguistico_verbal >= 33){
     document.getElementById("con1").value = 1
   }
-  if(aptitudes.mate > 30){
+  if(aptitudes.mate >= 33){
     document.getElementById("con2").value = 1
   }
-  if(aptitudes.espacio_visual > 30){
+  if(aptitudes.espacio_visual >= 33){
     document.getElementById("con3").value = 1
   }
-  if(aptitudes.interpersonal > 30){
+  if(aptitudes.interpersonal >= 33){
     document.getElementById("con4").value = 1
   }
-  if(aptitudes.creativa > 30){ //28
+  if(aptitudes.creativa >= 33){ //28
     document.getElementById("con5").value = 1
   }
   // if(aptitudes.musical > 33){ //28
-  //   document.getElementById("con5").value = 1
-  // }
-  // if(aptitudes.cinestesica > 33){ //28
-  //   document.getElementById("con5").value = 1
-  // }
-  if(aptitudes.intrapersonal > 30){ //filosofos, escritores, psicologos
-    document.getElementById("con6").value = 1
-  }
-}
+    //   document.getElementById("con5").value = 1
+    // }
+    // if(aptitudes.cinestesica > 33){ //28
+      //   document.getElementById("con5").value = 1
+      // }
+      if(aptitudes.intrapersonal >= 33){ //filosofos, escritores, psicologos
+        document.getElementById("con6").value = 1
+      }
+      console.log(aptitudes);
 
-function addPeso(peso){
-  preguntas[indicePregunta][1].forEach(function(tipo){
-    switch (tipo) {
-      case 'linguistico_verbal':
-      aptitudes.linguistico_verbal += peso;
-      break;
-      case 'mate':
-      aptitudes.mate += peso;
-      break;
-      case 'espacio':
-      aptitudes.espacio_visual += peso;
-      break;
-      case 'interpersonal':
-      aptitudes.interpersonal += peso;
-      break;
-      case 'creativa':
-      aptitudes.creativa += peso;
-      break;
-      default:
     }
-  });
-}
 
-//cada vez que se presiona un boton se guarda su peso y se cambia a la
-//siguiente pregunta
-function botonPrecionado(peso) {
-  switch (peso) {
-    case 10:
-    addPeso(peso);
-    break;
-    case 7.5://6.6
-    addPeso(peso);
-    break;
-    case 3.3:
-    addPeso(peso);
-    break;
-    case 0:
-    addPeso(peso);
-    break;
-    default:
-  }
-  indicePregunta++;
-  if(indicePregunta < preguntas.length){
-    cambiarPregunta();
-  }
-  else {
-    analizarAptitudes();
-    // document.getElementById("con1").value = 1
-    // document.getElementById("con2").value = 1
-    // document.getElementById("con3").value = 1
-    // document.getElementById("con4").value = 1
-    // document.getElementById("con5").value = 1
-    // document.getElementById("con6").value = 1
+    function addPeso(peso){
+      preguntas[indicePregunta][1].forEach(function(tipo){
+        switch (tipo) {
+          case 'linguistico_verbal':
+          aptitudes.linguistico_verbal += peso;
+          break;
+          case 'mate':
+          aptitudes.mate += peso;
+          break;
+          case 'espacio':
+          aptitudes.espacio_visual += peso;
+          break;
+          case 'interpersonal':
+          aptitudes.interpersonal += peso;
+          break;
+          case 'creativa':
+          aptitudes.creativa += peso;
+          break;
+          case 'intrapersonal':
+          aptitudes.intrapersonal += peso;
+          break;
+          default:
+          break;
+        }
+      });
+    }
 
-    document.getElementById("voc-form").submit();
+    //cada vez que se presiona un boton se guarda su peso y se cambia a la
+    //siguiente pregunta
+    function botonPrecionado(peso) {
 
-    //enviar resultados a
-  }
-}
+        switch (peso) {
+          case 10:
+          addPeso(peso);
+          break;
+          case 7.5://6.6
+          addPeso(peso);
+          break;
+          case 4.3://3.3
+          addPeso(peso);
+          break;
+          case 0:
+          addPeso(peso);
+          break;
+          default:
+        }
+        indicePregunta++;
+        if(indicePregunta < preguntas.length){
+          cambiarPregunta();
+        }
+        else {
+          analizarAptitudes();
+          // document.getElementById("con1").value = 1
+          // document.getElementById("con2").value = 1
+          // document.getElementById("con3").value = 1
+          // document.getElementById("con4").value = 1
+          // document.getElementById("con5").value = 1
+          // document.getElementById("con6").value = 1
+
+          //enviar resultados a
+          document.getElementById("voc-form").submit();
+
+        }
+    }

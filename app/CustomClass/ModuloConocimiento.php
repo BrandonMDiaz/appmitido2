@@ -14,14 +14,13 @@ class ModuloConocimiento
     'espacio-visual = lugares abiertos & bueno diseñando & observación & imaginativo',
     'interpersonal = adaptarse & ayudar a los demás & liderazgo & trabajo en equipo',
     'creativa = leer & bajo presión & bueno diseñando & imaginativo & gusto por la innovación',
-    '@ Derecho = lingüístico-verbal & interpersonal',
     '@ Arquitectura = espacio-visual & lógico-matemático & creativa',
     '@ Civil = lógico-matemático & espacio-visual & interpersonal',
     '@ Electrónico = lógico-matemático & interpersonal',
     '@ Informática = lógico-matemático & creativa',
+    '@ Derecho = lingüístico-verbal & interpersonal',
     '@ Psicologia = interpersonal & intrapersonal',
-    '@ Filosofia = intrapersonal & creativa & espacio-visual',
-    '@ Escritor = intrapersonal & lingüístico-verbal',
+    '@ Filosofia = intrapersonal & espacio-visual',
   ];
 
   function __construct($arrayReglas = null)

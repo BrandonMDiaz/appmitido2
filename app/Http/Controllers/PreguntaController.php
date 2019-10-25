@@ -21,7 +21,7 @@ class PreguntaController extends Controller
     $universidad_id = Auth::guard('universidad')->id();
     $subcategorias = SubCategoria::where('universidad_id', '=', $universidad_id)->get();
     if(isset($request->subcategoria_id)){
-      $preguntas = Pregunta::where('subcategoria_id', '=', $subcategoria_id)->paginate(15);
+      $preguntas = Pregunta::where('subcategoria_id', '=', $request->subcategoria_id)->paginate(15);
     }
     else {
       $preguntas = Pregunta::where('subcategoria_id', '=', $subcategorias[0]->id)->paginate(15);

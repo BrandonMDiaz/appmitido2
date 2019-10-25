@@ -1,9 +1,9 @@
 @extends('layouts.opcion')
 
 @section('content')
-
+<div class="back">
   <div class="container">
-    <div class="row justify-content-center" style="margin-top:30px;">
+    <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
           <div class="card-header  black-card">Universidad login</div>
@@ -57,5 +57,6 @@
       </div>
     </div>
   </div>
+</div>
 
 @endsection

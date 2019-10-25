@@ -831,6 +831,40 @@ fieldset{
   max-width: 300px;
   max-height: 300px;
 }
+
+/************************************/
+/************************************/
+/********* Vocacion page ************/
+/************************************/
+/************************************/
+
+.res-voc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.body-voc{
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 8px double #333;
+  border-radius: 10px;
+  padding: 1%;
+}
+.texto-voc{
+}
+.text-center{
+  width: 100%;
+  text-align: center;
+}
+.texto-div{
+  font-size: 18px;
+  padding: 2%;
+  width: 80%;
+}
 /************************************/
 /************************************/
 /********** Landing page ************/

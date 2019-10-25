@@ -13,9 +13,9 @@
         </div>
         <div class="res">
           <button onclick="botonPrecionado(10)" id="respuesta1"></button>
-          <button onclick="botonPrecionado(6.6)" id="respuesta2"></button>
+          <button onclick="botonPrecionado(7.5)" id="respuesta2"></button>
 
-          <button onclick="botonPrecionado(3.3)" id="respuesta3"></button>
+          <button onclick="botonPrecionado(4.3)" id="respuesta3"></button>
           <button onclick="botonPrecionado(0)" id="respuesta4"></button>
         </div>
       </div>

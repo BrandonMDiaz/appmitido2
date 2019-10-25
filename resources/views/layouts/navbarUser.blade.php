@@ -21,21 +21,49 @@
 
     <!-- Authentication Links -->
     @guest
-      <li class="">
+      {{-- <li class="">
         <a class="" href="{{ route('login') }}">
           <h5>
             {{ __('Login') }}
           </h5>
         </a>
-      </li>
+      </li> --}}
+      <li class="dropdown">
+        <a style="color:#555" id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            Login
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ route('login') }}">
+            Login aspirante
+          </a>
+          <a class="dropdown-item" href="{{ route('loginU') }}">
+            Login universidad
+          </a>
+      </div>
+    </li>
       @if (Route::has('register'))
-        <li class="">
+        {{-- <li class="">
           <a class="" href="{{ route('register') }}">
             <h5>
               {{ __('Register') }}
             </h5>
           </a>
-        </li>
+        </li> --}}
+        <li class="dropdown">
+
+          <a style="color:#555" id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              Register
+          </a>
+        </h5>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ route('register') }}">
+              Registrarse aspirante
+            </a>
+            <a class="dropdown-item" href="{{ route('registerU') }}">
+              Registrarse universidad
+            </a>
+        </div>
+      </li>
       @endif
       @else
         <li class=" dropdown">
@@ -46,7 +74,7 @@
             <a class="dropdown-item" href="{{  route('perfil')  }}">
               Perfil
             </a>
-            <a class="dropdown-item" href="{{ route('home') }}">
+            <a class="dropdown-item" href="{{ route('perfil.show') }}">
               Configuración
             </a>
             <a class="dropdown-item" href="{{ route('logout') }}"
