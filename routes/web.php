@@ -3,6 +3,9 @@
 Route::get('/', 'LandingController@index')->name('landing');
 
 Route::get('/perfil','PerfilController@perfil')->name('perfil');
+Route::get('/perfil/editar','PerfilController@show')->name('perfil.show');
+Route::patch('/perfil/editar/{user}','PerfilController@editar')->name('perfil.editar');
+
 // Route::get('/universidad', function () {
 //     return view('universidad.index');
 // });

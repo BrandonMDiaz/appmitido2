@@ -6,7 +6,7 @@
     <div class="row justify-content-center" style="margin-top:30px;">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header  black-card">Universidad</div>
+          <div class="card-header  black-card">Universidad login</div>
           <div class="card-body">
             <form method="POST" action="{{ route('universidad-login') }}">
               @csrf

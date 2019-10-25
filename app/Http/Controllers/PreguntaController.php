@@ -6,6 +6,7 @@ use App\Pregunta;
 use App\SubCategoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PreguntaController extends Controller
 {
@@ -15,11 +16,18 @@ class PreguntaController extends Controller
   *
   * @return \Illuminate\Http\Response
   */
-  public function index()
+  public function index(Request $request)
   {
     $universidad_id = Auth::guard('universidad')->id();
-    $subcategorias = SubCategoria::getPreguntas($universidad_id);
-    return view('preguntas.index', compact('subcategorias'));
+    $subcategorias = SubCategoria::where('universidad_id', '=', $universidad_id)->get();
+    if(isset($request->subcategoria_id)){
+      $preguntas = Pregunta::where('subcategoria_id', '=', $subcategoria_id)->paginate(15);
+    }
+    else {
+      $preguntas = Pregunta::where('subcategoria_id', '=', $subcategorias[0]->id)->paginate(15);
+    // $subcategorias = SubCategoria::getPreguntas($universidad_id);
+    }
+    return view('preguntas.index', compact('preguntas', 'subcategorias'));
   }
 
   /**
@@ -43,17 +51,29 @@ class PreguntaController extends Controller
   */
   public function store(Request $request)
   {
-
     $request->validate([
       'pregunta' => 'required',
-      'categoria_id' => 'required|numeric',
+      'subcategoria_id' => 'required',
+      'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+      'opc1' => 'required',
+      'opc2' => 'required',
+      'opc3' => 'required',
+      'resp' => 'required',
     ]);
-    $sub = new SubCategoria();
-    $sub->nombre = $request->input('nombre');
-    $sub->universidad_id = Auth::guard('universidad')->id();
-    $sub->categoria_id = $request->input('categoria_id');
-    $sub->save();
-    return redirect()->route('subcategorias.index');
+    $preg = new Pregunta();
+    $preg->universidad_id = Auth::guard('universidad')->id();
+    $preg->subcategoria_id = $request->subcategoria_id;
+    $preg->pregunta = $request->pregunta;
+    if($request->hasFile('image')){
+      $preg->imagen = $request->file('image')->store('public');
+    }
+    $preg->opcion1 = $request->opc1;
+    $preg->opcion2 = $request->opc2;
+    $preg->opcion3 = $request->opc3;
+    $preg->respuesta = $request->resp;
+    $preg->save();
+    $exito = 1;
+    return redirect()->route('preguntas.create',compact('exito'));
   }
 
   /**

@@ -7,6 +7,7 @@ use App\Pregunta;
 use App\Examen;
 use App\Categoria;
 use App\ExamenPregunta;
+use App\CustomClass\Estadistica;
 
 
 use Illuminate\Http\Request;
@@ -35,36 +36,12 @@ class ExamenController extends Controller
     }
 
     $categorias = Categoria::getExamen($examen ,Auth::user()->id);
-    $data = $this->estadisticas($categorias);
+    $data = Estadistica::estadisticas($categorias);
 
     return view('examen.index',compact('categorias', 'data'));
   }
 
-  private function estadisticas($categorias){
-    $obj =  new \stdClass;
-    $obj->promedioCat = array();
-    $obj->respuestaCorr = array();
-    $obj->respuestaCorrPorExamen = array();
-    $temp = 0;
-    $repCorr = 0;
-    $contador = 0;
-    foreach ($categorias as $categoria) {
-      $contador = 0;
-      $obj->respuestaCorrPorExamen[] = array();
-      foreach ($categoria->examenes as $examen) {
-        $temp = $examen->calificacion + $temp;
-        $repCorr = $repCorr + $examen->calificacion;
-        $contador++;
-      }
-      $obj->respuestaCorr[] = $temp;
-      if($contador == 0){
-        $obj->promedioCat[] = 0;
-      }else{
-        $obj->promedioCat[] = ($repCorr/($contador*10)) * 100;
-      }
-    }
-    return $obj;
-  }
+
   /**
   * Show the form for creating a new resource.
   *

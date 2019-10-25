@@ -1,7 +1,11 @@
 .body{
   background-color: white;
 }
-
+.flex-separados{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 .nav-item{
   z-index: 100;
 }
@@ -578,12 +582,11 @@ li h5{
   justify-content: start; */
   color: #626569;
   width: 80%;
-  border-bottom: 1px solid #a7a7a9;
 }
 .pregunta{
   max-height: 30%;
   overflow-y: auto;
-  width: 80%;
+  /* width: 80%; */
   display: flex;
   justify-content: center;
   /* padding: 3%; */
@@ -593,13 +596,18 @@ li h5{
   padding-right: 5%;
   margin-bottom: 2%;
   border-bottom: 1px solid #a7a7a9;
+  border-top: 1px solid #a7a7a9;
+
 }
 .pregunta p {
   margin-bottom: 0px;
 }
-.opciones{
-  /* padding: 3%; */
+fieldset{
   width: 80%;
+}
+.opciones{
+  padding-left: 6%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -618,7 +626,7 @@ li h5{
   margin-bottom: 0px;
 }
 .sticky2{
-  position: fixed;
+  position: sticky;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -820,8 +828,8 @@ li h5{
   font-size: 20px;
 }
 .chart{
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 300px;
+  max-height: 300px;
 }
 /************************************/
 /************************************/

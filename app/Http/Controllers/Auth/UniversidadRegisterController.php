@@ -21,7 +21,7 @@ class UniversidadRegisterController extends Controller
    *
    * @var string
    */
-  protected $redirectTo = '/home';
+  protected $redirectTo = '/homeU';
 
   /**
    * Create a new controller instance.
@@ -57,13 +57,23 @@ class UniversidadRegisterController extends Controller
    */
   protected function create(array $data)
   {
-    
       return Universidad::create([
           'email' => $data['email'],
           'name' => $data['name'],
           'logo' => 'gds',
           'password' => Hash::make($data['password']),
       ]);
+  }
+  public function register(Request $request){
+    //validamos
+    $this->validator($request->all())->validate();
+    //creamos
+    $this->create($request->all());
+    //logeamos
+    if (Auth::guard('universidad')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+      // if successful, then redirect to their intended location
+      return redirect()->intended(route('homeU'));
+    }
   }
   public function showRegisterForm()
   {

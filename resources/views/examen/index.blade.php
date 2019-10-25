@@ -9,10 +9,10 @@
 
     </div>
 
-    <div class="">
+    <div class="centrar">
       <p>Los examenes vienen con 10 preguntas de diferentes temas, cada examen tendrá
       13 minutos para ser contestado, escoge cualquier categoria y empieza a conocer
-    tus fuertes y debilidades</p>
+    tus fuertes y debilidades.</p>
     </div>
     <div class="container-examen">
 

@@ -2,8 +2,21 @@
 
 @section('content')
 
-  <div class="page-header">
+
+<div class="page-header">
     <div class="page-title">
+      <form class="" action="{{route('preguntas.index')}}" method="get">
+
+      <div class="form-group">
+          <label class="form-label">Selecciona que subcategoria quieres ver</label>
+          <select name="subcategoria_id" class="form-control">
+            @foreach($subcategorias as $sub)
+              <option onclick="send" value="{{ $sub->id }}" {{ isset($pregunta) && $pregunta->subcategoria_id == $sub->id ? 'selected' : '' }}>{{  $sub->nombre }}</option>
+            @endforeach
+          </select>
+      </div>
+    </form>
+
     </div>
   </div>
 
@@ -31,27 +44,11 @@
               </tr>
             </thead>
             <tbody>
-              {{-- @foreach ($subcategorias as $sub)
-                <tr>
-                  <td>{{$sub->categoria->nombre}}</dt>
-                  <td>{{$sub->id}}</dt>
-                  <td>{{$sub->nombre}}</dt>
-                  <td>
-                    <a href="{{ route('subcategorias.show', $sub->id) }}" class="btn btn-sm btn-warning">Editar</a>
-
-                    <form action="" method="POST">
-                      <input type="hidden" name="_method" value="DELETE">
-                      @csrf
-                      <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
-                    </form>
-                  </td>
-                </tr>
-              @endforeach --}}
-              @foreach($subcategorias as $sub)
+            
                 <tr>
                   <td>
                     <h4>
-                      {{$sub->nombre}}
+                      {{$subcategorias[0]->nombre}}
                     </h4>
                   </td>
                   <td></td>
@@ -59,7 +56,7 @@
                   <td></td>
 
                 </tr>
-                @foreach ($sub->preguntas as $preg)
+                @foreach ($preguntas as $preg)
                   <tr>
                     <td></td>
                     <td>{{ $preg->pregunta }}</td>
@@ -79,12 +76,15 @@
                     </td>
                   </tr>
                 @endforeach
-              @endforeach
             </tbody>
           </table>
         </div>
       </div>
     </div>
+    <div class="centrar" style="margin-top:20px;">
+      {{ $preguntas->links() }}
+    </div>
+
   </div>
 
 @endsection
