@@ -118,29 +118,31 @@ class PreguntaController extends Controller
   */
   public function update(Request $request, Pregunta $pregunta)
   {
+
     $request->validate([
-    'pregunta' => 'required',
-    'subcategoria_id' => 'required|numeric',
-    'opc1' => 'required',
-    'opc2' => 'required',
-    'opc3' => 'required',
-    'resp' => 'required',
-    'img' => 'image|nullable',
+      'pregunta' => 'required',
+      'subcategoria_id' => 'required',
+      'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+      'opc1' => 'required',
+      'opc2' => 'required',
+      'opc3' => 'required',
+      'resp' => 'required',
     ]);
-
-    $pregunta->pregunta = $request->input('pregunta');
-    $pregunta->subcategoria_id = $request->input('subcategoria_id');
     $pregunta->universidad_id = Auth::guard('universidad')->id();
-
-      $pregunta->imagen = $request->input('img');
-
-    $pregunta->opcion1 = $request->input('opc1');
-    $pregunta->opcion2 = $request->input('opc2');
-    $pregunta->opcion3 = $request->input('opc3');
-    $pregunta->respuesta = $request->input('resp');
-
+    $pregunta->subcategoria_id = $request->subcategoria_id;
+    $pregunta->pregunta = $request->pregunta;
+    if($request->hasFile('image')){
+      Storage::delete($pregunta->imagen);
+      $pregunta->imagen = $request->file('image')->store('public');
+    }
+    $pregunta->opcion1 = $request->opc1;
+    $pregunta->opcion2 = $request->opc2;
+    $pregunta->opcion3 = $request->opc3;
+    $pregunta->respuesta = $request->resp;
     $pregunta->save();
-    return redirect()->route('preguntas.index');
+    $exito = 1;
+
+    return redirect()->route('preguntas.show', $pregunta->id);
   }
 
   /**
@@ -151,6 +153,7 @@ class PreguntaController extends Controller
   */
   public function destroy(Pregunta $pregunta)
   {
-    //
+    $pregunta->delete();
+    return redirect()->route('preguntas.index');
   }
 }

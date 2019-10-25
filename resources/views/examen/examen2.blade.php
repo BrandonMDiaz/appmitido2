@@ -41,6 +41,10 @@
                 <p id='pregunta-{{$loop->index + 1}}'>
                   {{$pregunta->pregunta}}</p>
                 </div>
+                <div class="centrar">
+                  <img class="imagen-examen" src="{{isset($pregunta->imagen) ? Storage::url($pregunta->imagen) : ''}}" alt="">
+
+                </div>
                 <div class="opciones">
                   <div id="1{{$loop->index}}op" class="opcion">
                     <input type="radio" onclick="preguntaContestada({{'1' . $loop->index }})" name="group{{$loop->index}}" value={{1}}/>
