@@ -468,7 +468,10 @@ li h5{
 /********** Examen vista ************/
 /************************************/
 /************************************/
-
+.imagen-examen{
+  max-width: 500px;
+  max-height: 800px;
+}
 .modal-exam{
   width: 600px;
   height: 390px;
@@ -588,6 +591,7 @@ li h5{
   overflow-y: auto;
   /* width: 80%; */
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   /* padding: 3%; */
   padding-top: 3%;
@@ -1018,7 +1022,7 @@ fieldset{
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
+    /* color: #999; */
 }
 .wrapper #sidebar
 a,

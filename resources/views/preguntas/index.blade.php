@@ -11,7 +11,7 @@
           <label class="form-label">Selecciona que subcategoria quieres ver</label>
           <select onchange="this.form.submit()" name="subcategoria_id" class="form-control">
             @foreach($subcategorias as $sub)
-              <option onclick="buscar()" value="{{ $sub->id }}" {{ isset($pregunta) && $pregunta->subcategoria_id == $sub->id ? 'selected' : '' }}>{{  $sub->nombre }}</option>
+              <option onclick="buscar()" value="{{$sub->id}}" {{ $id == $sub->id ? 'selected' : '' }}>{{  $sub->nombre }}</option>
             @endforeach
           </select>
       </div>
@@ -38,16 +38,13 @@
                 <th>OPCION</th>
                 <th>RESPUESTA</th>
                 <th></th>
-
-
               </tr>
             </thead>
             <tbody>
-
                 <tr>
                   <td>
                     <h4>
-                      {{$subcategorias[0]->nombre}}
+                      {{$nombre}}
                     </h4>
                   </td>
                   <td></td>
@@ -64,7 +61,7 @@
                     <td>{{ $preg->respuesta }}</td>
 
                     <td>
-                      <a href="#">Mas informacion</a>
+                      <a href="{{route('preguntas.show', $preg->id)}}">Mas informacion</a>
                       {{-- <a href="{{ route('preguntas.edit', $preg->id) }}" class="btn btn-sm btn-warning">Editar</a>
                       <form action="{{ route('preguntas.destroy', $preg->id) }}" method="POST">
                         <input type="hidden" name="_method" value="DELETE">
