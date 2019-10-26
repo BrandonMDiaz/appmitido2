@@ -14,14 +14,12 @@
                 <a onclick="dropDown(this)" data-toggle="collapse" class="pointer dropdown-toggle">Tutoriales</a>
                 <ul class="list-unstyled drop" id="tutorialSubmenu">
                     <li>
-                        <a href="#">Crear</a>
+                        <a href="{{route('tutoriales.create')}}">Crear</a>
                     </li>
                     <li>
-                        <a href="route('examen.index')">Modificar</a>
+                        <a href="{{route('tutoriales.index')}}">Ver</a>
                     </li>
-                    <li>
-                        <a href="route('examen.index')">Eliminar</a>
-                    </li>
+
                 </ul>
             </li>
             <li>

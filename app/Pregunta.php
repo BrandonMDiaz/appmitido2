@@ -110,7 +110,6 @@ class Pregunta extends Model
     //
     //   $merge = $merge->merge($query);
     // }
-    dd($merge);
     return $merge;
   }
 

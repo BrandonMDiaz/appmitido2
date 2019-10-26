@@ -31,6 +31,14 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
+  <!-- include libraries(jQuery, bootstrap) -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
+
+
 </head>
 <body>
   <div id="app">
@@ -47,7 +55,7 @@
         </a>
         <ul class="contenedor-navbar2 background-col">
           <li>
-            <a  href="#"> <h5> Tutoriales </h5> </a>
+            <a  href="{{route('tutorialA.index')}}"> <h5> Tutoriales </h5> </a>
           </li>
           <li>
             <a href="{{route('examen.index')}}">

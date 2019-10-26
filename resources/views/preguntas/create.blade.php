@@ -3,7 +3,12 @@
 @section('content')
 
   @if (isset($exito))
-    agregado correctamente
+    <div id="my-modal" class="modal modal-1">
+      <div class="modal-exam">
+        <h1>Agregado correctamente</h1>
+        <button type="button" name="button" onclick="cerrar()">salir</button>
+      </div>
+    </div>
   @endif
 
   <div class="row">
@@ -98,5 +103,10 @@
       </div>
     </div>
 
-
+<script type="text/javascript">
+  function cerrar(){
+    const modal = document.getElementById('my-modal');
+    modal.style.display = 'none';
+  }
+</script>
   @endsection

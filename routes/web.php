@@ -10,7 +10,6 @@ Route::patch('/perfil/editar/{user}','PerfilController@editar')->name('perfil.ed
 //     return view('universidad.index');
 // });
 Route::get('/universidad','UniversidadController@index');
-Route::get('/tutoriales', 'TutorialController@index');
 
 Route::get('/vocacion', 'VocacionController@index')->name('vocacion.index');
 Route::get('/vocacion/test', 'VocacionController@test')->name('vocacion.test');
@@ -21,14 +20,19 @@ Route::post('/vocacion', 'VocacionController@orientador')->name('vocacion.orient
 Route::resource('categorias', 'CategoriaController');
 Route::resource('subcategorias', 'SubCategoriaController');
 Route::resource('preguntas', 'PreguntaController');
+Route::resource('tutoriales', 'TutorialController');
+
+Route::get('/aspirante/tutoriales', 'TutorialAController@index')->name('tutorialA.index');
+Route::get('/aspirante/tutoriales/{tutorial}', 'TutorialAController@show')->name('tutorialA.show');
 
 Route::resource('examen', 'ExamenController');
 Route::get('/resultados', 'ExamenController@resultados')->name('resultados.index');
 Route::get('/resultados/{examen}', 'ExamenController@resultadosShow')->name('resultados.show');
 
-
 /*Autenticacion*/
+// Auth::routes(['verify' => true]);
 Auth::routes();
+
 Route::get('universidad-login', 'Auth\UniversidadLoginController@showLoginForm')->name('loginU');
 Route::get('universidad-register', 'Auth\UniversidadRegisterController@showRegisterForm')->name('registerU');
 Route::post('universidad-register', ['as'=>'registrarU','uses'=>'Auth\UniversidadRegisterController@register']);
@@ -37,4 +41,4 @@ Route::post('universidad-login', ['as'=>'universidad-login','uses'=>'Auth\Univer
 Route::post('universidad-logout', ['as'=>'universidad-logout','uses'=>'Auth\UniversidadLoginController@logout']);
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/homeU', 'UniversidadController@universidad')->name('homeU');
+Route::get('/homeU', 'UniversidadHomeController@universidad')->name('homeU');

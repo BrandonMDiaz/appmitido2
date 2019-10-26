@@ -6,7 +6,8 @@
 
   <ul class="contenedor-navbar2 background-col">
     <li>
-      <a  href="#"> <h5> Tutoriales </h5> </a>
+      <a  href="{{route('tutorialA.index')}}"> <h5> Tutoriales </h5> </a>
+
     </li>
     <li>
       <a href="{{route('examen.index')}}">

@@ -429,8 +429,7 @@ li h5{
 }
 
 .categoria-tut-container{
-  display: grid;
-  grid-template-rows: [titulo] 20% [contenido] 80%;
+  width: 100%;
 }
 
 .categoria-titulo{
@@ -440,6 +439,11 @@ li h5{
   /* color: #005987; */
   padding-top: 10px;
   padding-left: 20px;
+  border-bottom: 1px solid #333;
+  margin-left: 3%;
+  width: 80%;
+  margin-bottom: 1%;
+  padding-bottom: 1%;
 }
 .categoria-titulo h4{
   margin-bottom: 0px;
@@ -448,10 +452,11 @@ li h5{
 
 }
 .catego-tut{
+  list-style-type: square;
   grid-column-start: contenido;
   display: flex;
   flex-wrap: wrap;
-
+  width: 100%;
   color: black;
   margin: 0px;
 }
@@ -460,9 +465,28 @@ li h5{
   padding-top: 10px;
   font-size: 17px;
   width: 237px;
-  margin-left: 5px;
+  margin-left: 3%;;
 }
 
+.tut-show{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.tut-text{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid #DAD7D7;
+  border-radius: 5px;
+  box-shadow: .1px 2px 2px .1px rgba(0,0,0,.3);
+  width: 85%;
+  padding: 4%;
+}
+.tut-titulo{
+  font-size: 17px;
+  width: 100%;
+}
 /************************************/
 /************************************/
 /********** Examen vista ************/

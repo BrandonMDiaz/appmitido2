@@ -6,8 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tutorial extends Model
 {
-  public function subCategoria()
+  protected $table = 'tutoriales';
+
+  public function subcategoria()
   {
-    return $this->hasOne('App\SubCategoria');
+    return $this->belongsTo('App\SubCategoria', 'subcategoria_id');
   }
+
+  /**Relacion 1 a muchos inversa**/
+  public function universidad()
+   {
+       return $this->belongsTo('App\Universidad');
+   }
 }
