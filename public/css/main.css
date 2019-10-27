@@ -830,6 +830,8 @@ fieldset{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
+
 }
 .inf-perfil *{
   width: 100%;
@@ -1248,7 +1250,27 @@ a.article:hover {
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
+@media (max-width: 880px) {
+.logo2{
+  width: 100%;
+  justify-content: center;
+}
+  .contenedor2{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contenedor-navbar2{
+    justify-content: center;
+    margin-right: 0%;
+  }
+}
 
+@media (max-width: 570px) {
+  .contenedor-navbar2 li{
+    width: 100%;
+    justify-content: center;
+  }
+}
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;

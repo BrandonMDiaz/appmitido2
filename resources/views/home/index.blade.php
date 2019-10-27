@@ -8,50 +8,26 @@
           <h3 class="subtitulo">Tutoriales</h3>
 
           <ul id="lista-tutoriales">
-            <li>
-              <p onclick="dropDown(this)" class="titulo-tutorial">
-                Matematicas
-              </p>
-              <ul class="sub-menu">
-                <a href="#">
-                  <li>Divisiones</li>
-                </a>
-                <a href="#">
-                  <li>Fracciones</li>
-                </a>
-                <a href="#">
-                  <li>Logica</li>
-                </a>
-              </ul>
-            </li>
-            <li>
-              <p onclick="dropDown(this)" class="titulo-tutorial">Español</p>
-              <ul class="sub-menu">
-                <a href="#">
-                  <li>Gramatica</li>
-                </a>
-                <a href="#">
-                  <li>Conjugacion</li>
-                </a>
-                <a href="#">
-                  <li>Lecturas</li>
-                </a>
-              </ul>
-            </li>
-            <li>
-              <p onclick="dropDown(this)" class="titulo-tutorial">Ingles</p>
-              <ul class="sub-menu">
-                <a href="#">
-                  <li>Grammar</li>
-                </a>
-                <a href="#">
-                  <li>Conjugations</li>
-                </a>
-                <a href="#">
-                  <li>Readings</li>
-                </a>
-              </ul>
-            </li>
+            @if (count($subcategorias) == 0)
+              <p style="color:#d4d4d4; font-size:19px;">No hay subcategorias</p>
+            @endif
+            @foreach ($subcategorias as $sub)
+              <li>
+                <p onclick="dropDown(this)" class="titulo-tutorial">
+                  {{$sub->nombre}}
+                </p>
+                <ul class="sub-menu">
+                  @if (count($sub->tutoriales) == 0)
+                    <p style="color:#d4d4d4; font-size:19px;">No hay tutoriales</p>
+                  @endif
+                  @foreach ($sub->tutoriales as $tut)
+                    <a href="{{route('tutoriales.show', $tut->id)}}">
+                      <li>{{$tut->titulo}}</li>
+                    </a>
+                  @endforeach
+                </ul>
+              </li>
+            @endforeach
           </ul>
         </div>
       </div>

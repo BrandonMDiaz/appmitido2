@@ -38,8 +38,9 @@ class Categoria extends Model
      return $this->hasMany('App\Examen');
    }
 
-   static public function getCategoria($id){
+   static public function getCategoria($id, $un_id){
      $query = Categoria::where('id', '=', $id)
+                    ->where('universidad_id', '=', $un_id)
                     ->with('subCategorias')
                     ->get();
      return $query;

@@ -20,6 +20,7 @@ class ExamenController extends Controller
   public function __construct()
   {
     $this->middleware('auth');
+    $this->middleware('univ');
   }
   /**
   * Display a listing of the resource.
@@ -155,7 +156,11 @@ class ExamenController extends Controller
   */
   public function show($id)
   {
-    $categoria = Categoria::getCategoria($id);
+    $user = Auth::user();
+    $categoria = Categoria::getCategoria($id, $user->examen);
+    if(count($categoria) == 0){
+      return redirect()->route('home');
+    }
     $preguntas = Pregunta::get10preguntas($categoria[0]);
     if(count($preguntas) != 10){
       return view('examen.missing');
