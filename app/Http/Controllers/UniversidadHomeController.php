@@ -37,9 +37,9 @@ class UniversidadHomeController extends Controller
     $user->name = $request->name;
     $user->logo = $request->file('logo')->store('/public/universidad');
     $user->save();
-
     return view('home.universidad', compact('user'));
   }
+
   public function editar(Request $request)
   {
     $request->validate([
@@ -49,7 +49,7 @@ class UniversidadHomeController extends Controller
     $user->logo = $request->file('logo')->store('/public/universidad');
     $user->save();
 
-    return view('home.universidad');
+    return view('home.universidad', compact('user'));
   }
 
   public function perfil(){

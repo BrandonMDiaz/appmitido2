@@ -60,7 +60,6 @@ class UniversidadRegisterController extends Controller
       return Universidad::create([
           'email' => $data['email'],
           'name' => $data['name'],
-          'logo' => 'gds',
           'password' => Hash::make($data['password']),
       ]);
   }

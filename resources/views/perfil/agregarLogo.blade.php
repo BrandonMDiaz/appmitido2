@@ -12,9 +12,9 @@
         <input type="hidden" name="_method" value="PATCH">
         @csrf
 
-          <label class="form-label" style="background-color: #ef7070;"for="logo">Agregar logo</label>
+          <label class="form-label" for="logo">Agregar logo</label>
             @error('logo')
-            <p>
+            <p style="background-color: #ef7070;">
               <strong>{{ $message }}</strong>
             </p>
             @enderror

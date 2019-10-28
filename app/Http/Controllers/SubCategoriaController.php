@@ -28,7 +28,7 @@ class SubCategoriaController extends Controller
     $categorias = Categoria::getCategorias($universidad_id);
     // $subcategorias = SubCategoria::where('universidad_id', '=', $universidad_id)->get();
     // return view('subcategorias.index', compact('subcategorias'));
-    return view('subcategorias.index', compact('categorias'));
+    return view('Subcategorias.index', compact('categorias'));
 
   }
 
@@ -61,7 +61,7 @@ class SubCategoriaController extends Controller
     $sub->universidad_id = Auth::guard('universidad')->id();
     $sub->categoria_id = $request->input('categoria_id');
     $sub->save();
-    return redirect()->route('subcategorias.index');
+    return redirect()->route('Subcategorias.index');
   }
 
   /**
@@ -108,7 +108,7 @@ class SubCategoriaController extends Controller
     $subcategoria->universidad_id = Auth::guard('universidad')->id();
     $subcategoria->categoria_id = $request->input('categoria_id');
     $subcategoria->save();
-    return redirect()->route('subcategorias.index');
+    return redirect()->route('Subcategorias.index');
 
   }
 
@@ -121,6 +121,6 @@ class SubCategoriaController extends Controller
   public function destroy(SubCategoria $subcategoria)
   {
     $subcategoria->delete();
-    return redirect()->route('subcategorias.index');
+    return redirect()->route('Subcategorias.index');
   }
 }

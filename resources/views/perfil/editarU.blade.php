@@ -5,7 +5,7 @@
   <div>
     <div class="row" style="margin-top:20px;">
       <div class="col-md-8 offset-2">
-        <form class="card" method="POST" action="{{ route('perfilU.edit', $user->id) }}">
+        <form enctype="multipart/form-data" class="card" method="POST" action="{{ route('perfilU.edit', $user->id) }}">
           @csrf
           <input type="hidden" name="_method" value="PATCH">
           <div class="card-body">

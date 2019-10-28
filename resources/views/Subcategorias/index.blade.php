@@ -26,22 +26,6 @@
               </tr>
             </thead>
             <tbody>
-              {{-- @foreach ($subcategorias as $sub)
-                <tr>
-                  <td>{{$sub->categoria->nombre}}</dt>
-                  <td>{{$sub->id}}</dt>
-                  <td>{{$sub->nombre}}</dt>
-                  <td>
-                    <a href="{{ route('subcategorias.show', $sub->id) }}" class="btn btn-sm btn-warning">Editar</a>
-
-                    <form action="" method="POST">
-                      <input type="hidden" name="_method" value="DELETE">
-                      @csrf
-                      <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
-                    </form>
-                  </td>
-                </tr>
-              @endforeach --}}
               @foreach($categorias as $cat)
                 <tr>
                   <td>
