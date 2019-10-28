@@ -13,7 +13,7 @@ class CreaTablaSubCategoria extends Migration
      */
     public function up()
     {
-        Schema::create('subCategorias', function (Blueprint $table) {
+        Schema::create('subcategorias', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('universidad_id');
             $table->unsignedInteger('categoria_id');
