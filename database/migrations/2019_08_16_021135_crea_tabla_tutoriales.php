@@ -23,7 +23,7 @@ class CreaTablaTutoriales extends Migration
             $table->timestamps();
             $table->foreign('subcategoria_id')
               ->references('id')
-              ->on('subCategorias')
+              ->on('subcategorias')
               ->onDelete('cascade');
             $table->foreign('universidad_id')
                 ->references('id')

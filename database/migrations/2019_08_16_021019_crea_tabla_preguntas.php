@@ -31,7 +31,7 @@ class CreaTablaPreguntas extends Migration
               ->onDelete('cascade');
             $table->foreign('subcategoria_id')
               ->references('id')
-              ->on('subCategorias')
+              ->on('subcategorias')
               ->onDelete('cascade');
 
         });

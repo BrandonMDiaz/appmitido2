@@ -38,6 +38,6 @@ class CreaTablaSubCategoria extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subCategorias');
+        Schema::dropIfExists('subcategorias');
     }
 }
