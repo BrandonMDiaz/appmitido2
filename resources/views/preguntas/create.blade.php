@@ -48,7 +48,7 @@
 
               <label class="form-label">Imagen</label>
               <div class="form-group">
-                <input type="file" name="image"class="@error('opc1') is-invalid @enderror" >
+                <input type="file" name="image" class="@error('opc1') is-invalid @enderror" >
                 {{-- {{ Form::file('image',['class' => ' form-control']) }} --}}
                 @error('image')
                 <span class="invalid-feedback" role="alert">

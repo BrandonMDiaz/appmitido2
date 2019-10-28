@@ -496,6 +496,10 @@ li h5{
   max-width: 500px;
   max-height: 800px;
 }
+.imagen-per{
+  max-width: 200px;
+  max-height: 400px;
+}
 .modal-exam{
   width: 600px;
   height: 390px;

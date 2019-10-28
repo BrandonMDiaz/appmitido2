@@ -7,19 +7,23 @@
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Universidades</h1>
-          <p class="lead">Escoge la universidad a la que quieres entrar</p>
+          <p class="lead">Selecciona una universidad</p>
         </div>
       </div>
     </div>
-    <div class="buscar">
-      <input class="search" type="text" name="" value="" placeholder="buscar...">
-    </div>
+
+    <form class="buscar" style="align-items:center;" action="{{route('seleccionarU')}}" method="get">
+        <input class="search" type="text" name="buscar" placeholder="buscar...">
+        <div style="margin-left:20px;">
+          <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+    </form>
     <div class="universidades-lista">
       @foreach ($universidades as $universidad)
         <a href="{{route('home', ['id' => $universidad->id])}}">
           <div class="universidad">
             <div class="logo-universidad2">
-              <img class="logo-universidad" src="{{URL::asset('/images/uvm.jpg')}}" alt="">
+              <img class="logo-universidad" src="{{isset($universidad->logo) ? Storage::url($universidad->logo) : URL::asset('/images/uvm.jpg')}}" alt="">
             </div>
             <div class="inf-universidad">
               <h5 class="nombre-universidad">{{$universidad->name}}</h5>
@@ -27,17 +31,10 @@
           </div>
         </a>
       @endforeach
-    
-      {{-- <div class="universidad">
-        <div class="logo-universidad">
-          <img class="logo-universidad" src="{{URL::asset('/images/math.jpg')}}" alt="">
-        </div>
-        <div class="inf-universidad">
-          <p class="nombre-universidad">Universidad de guadalajara</p>
-        </div>
-      </div> --}}
 
-
+    </div>
+    <div class="centrar" style="margin-top:20px;">
+      {{ $universidades->links() }}
     </div>
   </div>
 @endsection

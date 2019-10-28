@@ -96,7 +96,7 @@
           </div>
         @endforeach
       </div>
-
+    </div>
   <div class="barra-preguntas sticky2">
     <div class="numeros">
       <p>Ir a pregunta:</p>

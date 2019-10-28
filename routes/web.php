@@ -6,10 +6,15 @@ Route::get('/perfil','PerfilController@perfil')->name('perfil');
 Route::get('/perfil/editar','PerfilController@show')->name('perfil.show');
 Route::patch('/perfil/editar/{user}','PerfilController@editar')->name('perfil.editar');
 
+Route::get('/perfilU','UniversidadHomeController@perfil')->name('perfilU');
+Route::get('/perfilU/editar','UniversidadHomeController@show')->name('perfilU.show');
+Route::patch('/perfilU/editar/{universidad}','UniversidadHomeController@editar')->name('universidad.edit');
+Route::patch('/perfilU/{universidad}','UniversidadHomeController@edit')->name('perfilU.edit');
+
 // Route::get('/universidad', function () {
 //     return view('universidad.index');
 // });
-Route::get('/universidad','UniversidadController@index');
+Route::get('/universidad','UniversidadController@index')->name('seleccionarU');
 
 Route::get('/vocacion', 'VocacionController@index')->name('vocacion.index');
 Route::get('/vocacion/test', 'VocacionController@test')->name('vocacion.test');

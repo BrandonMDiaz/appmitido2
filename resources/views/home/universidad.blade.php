@@ -3,6 +3,11 @@
 @section('content')
 
   <div class="centrar">
-    Bienvenido
+    <p>
+      Bienvenido {{$user->name}}
+    </p>
+  </div>
+  <div class="centrar">
+    <img class="imagen-per" src="{{Storage::url($user->logo)}}" alt="">
   </div>
 @endsection

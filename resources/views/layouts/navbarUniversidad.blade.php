@@ -104,7 +104,7 @@
                       {{ Auth::guard('universidad')->user()->name }} <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{{ route('home') }}">
+                      <a class="dropdown-item" href="{{ route('perfilU.show') }}">
                         Configuración
                       </a>
                       <a class="dropdown-item" href="{{ route('universidad-logout') }}"

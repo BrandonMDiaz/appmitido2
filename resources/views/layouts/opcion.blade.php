@@ -46,8 +46,8 @@
       @include('layouts.navbarUniversidad')
     @endauth
 
-    {{-- @if(!Auth::guard('universidad')->check()) --}}
-    @auth
+    @if(!Auth::guard('universidad')->check() && Auth::check())
+    {{-- @auth --}}
       <nav class="sticky contenedor2 background-col">
         <a class='logo2' href="{{ route('home') }}">
           <img class='icono2' src="{{URL::asset('/images/icon.png')}}"/>
