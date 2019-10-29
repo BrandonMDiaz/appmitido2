@@ -500,6 +500,9 @@ li h5{
   max-width: 200px;
   max-height: 400px;
 }
+.modal-backdrop{
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .modal-exam{
   width: 600px;
   height: 390px;

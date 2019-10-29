@@ -19,7 +19,6 @@ class CreaTablaExamenes extends Migration
             $table->unsignedInteger('categoria_id');
             $table->string('calificacion');
             $table->integer('tiempo_en_segundos');
-            $table->dateTime('fecha');
             $table->timestamps();
             $table->foreign('user_id')
               ->references('id')

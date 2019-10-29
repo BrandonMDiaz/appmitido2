@@ -21,10 +21,15 @@ class Pregunta extends Model
     if($count == 0){
       return [];
     }
+    //para saber si al dividirse se tendran que agregar mas o no
     $modulo = 10 % $count;
+    //se divide para saber cuatas vamos a obtener
     $div = round(10 / $count,0);
+    //cuantas preguntas nos vamos a saltar
     $skip = round(count($examenes) * $div);
+    //donde vamos a combinar todas las queries
     $merge = new Collection;
+    //en caso que la division tenga residuos se agregaran al balanceador
     $valanceador = $modulo;
     $contador = 0;
     do{
@@ -33,15 +38,18 @@ class Pregunta extends Model
         ->skip($skip)
         ->take($div + $valanceador)
         ->get();
-        $merge = $merge->merge($query);
-        $valanceador = 0;
+        if (count($query) > 0){
+          $merge = $merge->merge($query);
+          $valanceador = 0;
+        }
+        //si ya son 10 preguntas que regrese
         if(count($merge) == 10){
           return $merge;
         }
+        //si
         if(count($query) < $div && count($merge) != 10){
-          $valanceador = $div - count($query);
+          $valanceador = $div - count($query) + $valanceador;
         }
-
       }
       if($contador == 2){
         return [];
