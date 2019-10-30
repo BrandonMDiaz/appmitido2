@@ -8,6 +8,11 @@ namespace App\CustomClass;
 class ModuloConocimiento
 {
   public $reglas = [
+    'Paciente = Leer & adaptarse',
+    ' = Leer & adaptarse',
+    'intrapersonal = Leer & adaptarse',
+    'intrapersonal = Leer & adaptarse',
+    'intrapersonal = Leer & adaptarse',
     'intrapersonal = Leer & adaptarse',
     'lingüístico-verbal = Leer & bueno para hablar & redactar documentos',
     'lógico-matemático = pensamiento abstracto & gusto por matemáticas & física & lógica & resolución de problemas & componentes físicos',
