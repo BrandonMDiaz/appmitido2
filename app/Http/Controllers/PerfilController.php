@@ -29,7 +29,7 @@ class PerfilController extends Controller
     $request->validate([
             'name' => 'required|min:3|max:155',
             'preparatoria' => 'required|max:255',
-            'promedio' => 'required|numeric',
+            'promedio' => 'required|numeric|max:100|min:60',
         ]);
     $user->name = $request->name;
     $user->preparatoria = $request->preparatoria;

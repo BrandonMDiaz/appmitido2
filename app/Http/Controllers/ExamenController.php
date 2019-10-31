@@ -123,27 +123,63 @@ class ExamenController extends Controller
     $minutos = (int)$minutos;
     $segundos = $examen->tiempo_en_segundos % 60;
 
+    if($segundos < 10){
+      $segundos = '0'.$segundos;
+    }
+
     $obj->minutos = $minutos;
     $obj->segundos = $segundos;
     $obj->respuestaSeleccionada = [];
     $obj->categoriaM = [];
     $obj->categoriaB = [];
 
+    $catAuxB = [];
+    $catAuxM = [];
+    $catAux = [];
     $repetido = [];
     foreach ($examen->examenPregunta as $pregunta) {
       array_push($obj->respuestaSeleccionada, $pregunta->pivot->respuesta_seleccionada);
+      if(!in_array($pregunta->subcategoria->nombre, $catAux)){
+        $catAux[] =  $pregunta->subcategoria->nombre;
+      }
       if($pregunta->pivot->correcta == 1){
           $obj->correctas = $obj->correctas + 1;
-          if(!in_array($pregunta->subcategoria->nombre, $obj->categoriaB)){
-            array_push($obj->categoriaB, $pregunta->subcategoria->nombre);
-          }
+          array_push($catAuxB, $pregunta->subcategoria->nombre);
+
+          // if(!in_array($pregunta->subcategoria->nombre, $obj->categoriaB)){
+          //   array_push($obj->categoriaB, $pregunta->subcategoria->nombre);
+          // }
       }
       else {
-        if(!in_array($pregunta->subcategoria->nombre, $obj->categoriaM)){
-          array_push($obj->categoriaM, $pregunta->subcategoria->nombre);
+          array_push($catAuxM, $pregunta->subcategoria->nombre);
+        // if(!in_array($pregunta->subcategoria->nombre, $obj->categoriaM)){
+        //   array_push($obj->categoriaM, $pregunta->subcategoria->nombre);
+        // }
+      }
+    }
+
+
+    $catAuxB = array_count_values($catAuxB);
+    $catAuxM = array_count_values($catAuxM);
+    foreach ($catAux as $cat) {
+      if(array_key_exists($cat,$catAuxB) && array_key_exists($cat,$catAuxM)){
+        if($catAuxB[$cat] > $catAuxM[$cat]){
+          array_push($obj->categoriaB, $cat);
+        }
+        else{
+          array_push($obj->categoriaM, $cat);
+        }
+      }
+      else{
+        if(array_key_exists($cat,$catAuxB)){
+          array_push($obj->categoriaB, $cat);
+        }
+        else if(array_key_exists($cat,$catAuxM)){
+          array_push($obj->categoriaM, $cat);
         }
       }
     }
+
 
     return $obj;
   }

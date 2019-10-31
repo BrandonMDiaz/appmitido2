@@ -6,7 +6,7 @@
 
       <div class="titulo-re">
         <p>{{$datos->correctas}} respuesta correctas de 10 </p>
-        <p>Te tomó un tiempo de {{$datos->minutos}}:{{$datos->segundos}}</p>
+        <p>Te sobró un tiempo de {{$datos->minutos}}:{{$datos->segundos}}</p>
       </div>
       <div class="tutoriales-recomendados">
         <div class="tem">
