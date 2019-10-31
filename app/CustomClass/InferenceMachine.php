@@ -7,7 +7,8 @@ namespace App\CustomClass;
 class InferenceMachine
 {
   function encender($memoria, $bc){
-
+    $list = [];
+    $contador = 0;
     /*cargar memoria. La memoria tiene que tener adentro todos los
     atomos que se obtuvieron de las respuestas del examen*/
     /*Va a tener en su array el nombre de esos atomos. Ejemplo:
@@ -59,10 +60,15 @@ class InferenceMachine
         if($memoria->atomoPresente($reg->atomoGenerado)){
           /* aqui en vez de regresar el primero que funcione, podiras regresar
           una lista con todos los resultados objetivos posibles */
-          return $reg->atomoGenerado;
+          if($contador == 3){
+            return $list;
+          }
+          $list[] = $reg->atomoGenerado;
+          $contador ++;
           // return $reg->atomoGenerado->data;
         }
       }
     }//end foreach
+    return $list;
   }
 }

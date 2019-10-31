@@ -18,7 +18,7 @@ class Regla
 
   /* aqui puede fallar !!!!!!!!!!!!!!
   el atomo que genera la regla, si falla el arreglo de objetos le pongo el
-  puro atomo en string al chile, a la verga */
+  puro atomo en string. */
   // private $atomoGenerado = new Atomo();
   public $atomoGenerado;
 
@@ -95,7 +95,7 @@ class Regla
         $contador++;
         $contadorArrayRes++;
       }
-    } 
+    }
 
     //regresamos true o false dependiendo si genera el atomo o no
     return end($arrayResultados);

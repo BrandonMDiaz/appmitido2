@@ -15,7 +15,7 @@ class SubCategoria extends Model
   /**Relacion 1 a 1**/
   public function tutoriales()
   {
-    return $this->hasMany('App\tutorial', 'subcategoria_id');
+    return $this->hasMany('App\Tutorial', 'subcategoria_id');
   }
 
   /**Relacion 1 a muchos**/

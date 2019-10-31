@@ -24,10 +24,13 @@ nav a:hover{
   text-decoration:none;
   color: inherit;
 }
-/* .flex{
+.flex2{
   display: flex;
   margin-bottom: 30px;
-} */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .wid{
   width: 80%;
   background-color: #f8fafc;
@@ -883,7 +886,7 @@ fieldset{
 }
 
 .body-voc{
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

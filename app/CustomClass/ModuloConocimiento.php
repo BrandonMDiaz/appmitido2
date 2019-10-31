@@ -1,18 +1,10 @@
 <?php
 namespace App\CustomClass;
-/*
-  Esta clase deberia de llamarse Modulo de conocimiento, y tener un array con
-  objetos de otra clase llamada reglas, sin embargo no soy tan crack aun con
-  esto de sistemas basados en conocimiento y me falta tiempo
-  */
+
 class ModuloConocimiento
 {
   public $reglas = [
-    'Paciente = Leer & adaptarse',
-    ' = Leer & adaptarse',
-    'intrapersonal = Leer & adaptarse',
-    'intrapersonal = Leer & adaptarse',
-    'intrapersonal = Leer & adaptarse',
+    // 'Paciente = Leer & adaptarse',
     'intrapersonal = Leer & adaptarse',
     'lingüístico-verbal = Leer & bueno para hablar & redactar documentos',
     'lógico-matemático = pensamiento abstracto & gusto por matemáticas & física & lógica & resolución de problemas & componentes físicos',
@@ -36,7 +28,7 @@ class ModuloConocimiento
   }
 
   function getCarrera($memoria){
-
+    
   }
 
   function loadRules(){
