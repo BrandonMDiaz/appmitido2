@@ -68,11 +68,11 @@
                       Registrarse
                     </a>
                     {{-- </div> --}}
-                    @if (Route::has('password.request'))
+                    {{-- @if (Route::has('password.request'))
                       <a class="btn btn-link" href="{{ route('password.request') }}">
                         {{ __('Forgot Your Password?') }}
                       </a>
-                    @endif
+                    @endif --}}
                   </div>
                 </div>
               </form>
@@ -125,9 +125,9 @@
                       Registrarse
                     </a>
                     {{-- </div> --}}
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                    {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
                       {{ __('Forgot Your Password?') }}
-                    </a>
+                    </a> --}}
                   </div>
                 </div>
               </form>
