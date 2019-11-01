@@ -3,7 +3,6 @@ function dropDown(id){
 	id.nextSibling.nextSibling.classList.toggle("drop");
 }
 
-
 var tot = document.getElementById("total").innerHTML;
 for (var i = 0; i < tot; i++) {
   const obj = JSON.parse(document.getElementById(`data${i}`).innerHTML);
@@ -17,6 +16,8 @@ for (var i = 0; i < tot; i++) {
     data.push(obj[x].calificacion);
     labels.push(x + 1);
   }
+	console.log(data);
+	
   var myLineChart = new Chart(oneChart, {
     type: 'line',
     data: {

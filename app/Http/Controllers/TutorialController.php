@@ -57,7 +57,6 @@ class TutorialController extends Controller
       $tut = new Tutorial();
       $tut->titulo = $request->input('titulo');
       $tut->universidad_id = Auth::guard('universidad')->id();
-      dd($request->all());
       $tut->subcategoria_id = $request->subcategoria_id;
       $tut->texto = $request->description;
       // $tut->subcategoria_id = $request->input('categoria_id');

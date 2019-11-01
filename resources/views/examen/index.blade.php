@@ -44,7 +44,6 @@
           </div>
         @endforeach
       </div>
-
     </div>
     <script src="{{ asset('js/examenIndex.js') }}" defer> </script>
 

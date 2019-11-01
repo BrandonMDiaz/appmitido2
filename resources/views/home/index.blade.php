@@ -69,24 +69,8 @@
               </div>
             @endforeach
           </div>
-
-
-
-
-
-          {{-- <a href="{{route("",[$categoria->id])}}"> --}}
-          {{-- @foreach ($categorias as $categoria)
-            <div class="categoria-examen-2">
-              <img src="{{URL::asset('/images/math.jpg')}}" class="categoria-examen-img">
-              <div class="categoria-examen-body">
-                <p class="nombre-categoria-2">{{$categoria->nombre}}</p>
-              </div>
-            </div>
-          @endforeach --}}
-          {{-- </a> --}}
-
         </div>
       </div>
+      <script src="{{ asset('js/dropDown.js') }}" defer></script>
     </div>
-  <script src="{{ asset('js/dropDown.js') }}" defer></script>
 @endsection

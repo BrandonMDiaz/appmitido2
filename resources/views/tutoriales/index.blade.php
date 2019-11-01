@@ -5,8 +5,8 @@
 	<div class="tutoriales">
 		<div class="header-tutoriales subtitulo">
 			<h1>Tutoriales</h1>
+			<p>Escoge un tutorial para que comiences a mejorar tus conocimientos.</p>
 		</div>
-
 		@foreach ($subcategorias as $sub)
 			<div class="categoria">
 				<div class="categoria-tut-container">

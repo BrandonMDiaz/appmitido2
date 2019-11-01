@@ -200,7 +200,6 @@ class ExamenController extends Controller
     $preguntas = Pregunta::get10preguntas($categoria[0]);
     if(count($preguntas) != 10){
       // dd(count($preguntas));
-      dd($preguntas);
       return view('examen.missing');
     }
     $nombre = $categoria[0]->nombre;
