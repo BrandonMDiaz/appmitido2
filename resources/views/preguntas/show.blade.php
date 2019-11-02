@@ -14,7 +14,7 @@
             </div>
           </div>
           <div class="centrar">
-            <img class="imagen-examen" src="{{isset($pregunta->imagen) ? Storage::url($pregunta->imagen) : ''}}" alt="">
+            <img class="imagen-examen" src="{{isset($pregunta->imagen) ? $pregunta->imagen_url : ''}}" alt="">
 
           </div>
             <div class="opciones">
