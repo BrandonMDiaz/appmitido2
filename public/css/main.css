@@ -12,7 +12,10 @@
 .show-1{
   z-index: 100;
 }
-
+.body-homeU{
+  width: 80%;
+  padding: 1%;
+}
 tbody tr ul {
   list-style-type: circle;
 }
@@ -500,8 +503,8 @@ li h5{
   max-height: 800px;
 }
 .imagen-per{
-  max-width: 200px;
-  max-height: 400px;
+  max-width: 230px;
+  max-height: 250px;
 }
 .modal-backdrop{
   background-color: rgba(0, 0, 0, 0.5);

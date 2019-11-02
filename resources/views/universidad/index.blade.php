@@ -7,7 +7,7 @@
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Universidades</h1>
-          <p class="lead">Selecciona una universidad</p>
+          <p class="lead">Selecciona la universidad a la cual quieres hacer tramites.</p>
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@
         <a href="{{route('home', ['id' => $universidad->id])}}">
           <div class="universidad">
             <div class="logo-universidad2">
-              <img class="logo-universidad" src="{{isset($universidad->logo) ? Storage::url($universidad->logo) : URL::asset('/images/uvm.jpg')}}" alt="">
+              <img class="logo-universidad" src="{{isset($universidad->logo_url) ? $universidad->logo_url : URL::asset('/images/no_disponible.png')}}" alt="">
             </div>
             <div class="inf-universidad">
               <h5 class="nombre-universidad">{{$universidad->name}}</h5>
