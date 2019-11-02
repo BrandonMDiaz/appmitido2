@@ -3,10 +3,10 @@
     <!-- Sidebar  -->
     <nav id="sidebar">
         <div class="sidebar-header">
-          <div class='logo2'>
+          <a class='logo2' href="{{route('homeU')}}">
             <img class='icono2' src="{{URL::asset('/images/icon.png')}}"/>
             <h2>Appmitido</h2>
-          </div>
+          </a>
         </div>
 
         <ul class="list-unstyled components">

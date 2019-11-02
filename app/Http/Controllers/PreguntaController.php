@@ -7,6 +7,7 @@ use App\SubCategoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use JD\Cloudder\Facades\Cloudder;
 
 class PreguntaController extends Controller
 {
@@ -79,7 +80,13 @@ class PreguntaController extends Controller
     $preg->subcategoria_id = $request->subcategoria_id;
     $preg->pregunta = $request->pregunta;
     if($request->hasFile('image')){
-      $preg->imagen = $request->file('image')->store('public');
+      $preg->imagen = $request->file('image')->getRealPath();
+      Cloudder::upload($preg->imagen, null);
+      $resultados = Cloudder::getResult();
+      $preg->imagen = $resultados['public_id'];
+      $preg->imagen_url =$resultados['url'];
+      // $request->file('image')->getRealPath();
+      // $preg->imagen = $request->file('image')->store('public');
     }
     $preg->opcion1 = $request->opc1;
     $preg->opcion2 = $request->opc2;
@@ -137,8 +144,15 @@ class PreguntaController extends Controller
     $pregunta->subcategoria_id = $request->subcategoria_id;
     $pregunta->pregunta = $request->pregunta;
     if($request->hasFile('image')){
-      Storage::delete($pregunta->imagen);
-      $pregunta->imagen = $request->file('image')->store('public');
+      if(isset($pregunta->imagen) && $pregunta->imagen != null){
+        Cloudder::destroy($pregunta->imagen);
+      }
+      $pregunta->imagen = $request->file('image')->getRealPath();
+      Cloudder::upload($pregunta->imagen, null);
+      $resultados = Cloudder::getResult();
+      $pregunta->imagen = $resultados['public_id'];
+      $pregunta->imagen_url =$resultados['url'];
+      // $pregunta->imagen = $request->file('image')->store('public');
     }
     $pregunta->opcion1 = $request->opc1;
     $pregunta->opcion2 = $request->opc2;
@@ -147,7 +161,7 @@ class PreguntaController extends Controller
     $pregunta->save();
     $exito = 1;
 
-    return redirect()->route('preguntas.show', $pregunta->id);
+    return redirect()->route('preguntas.show', $pregunta->id)->with('status','Cargado correctamente');
   }
 
   /**
@@ -158,6 +172,7 @@ class PreguntaController extends Controller
   */
   public function destroy(Pregunta $pregunta)
   {
+    Cloudder::destroy($pregunta->imagen);
     $pregunta->delete();
     return redirect()->route('preguntas.index');
   }

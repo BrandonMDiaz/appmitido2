@@ -19,6 +19,7 @@ class CreaTablaPreguntas extends Migration
             $table->unsignedInteger('subcategoria_id');
             $table->text('pregunta');
             $table->string('imagen')->nullable();
+            $table->string('imagen_url')->nullable();        
             $table->string('opcion1');
             $table->string('opcion2');
             $table->string('opcion3');

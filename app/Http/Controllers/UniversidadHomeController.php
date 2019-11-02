@@ -35,7 +35,14 @@ class UniversidadHomeController extends Controller
     ]);
     $user = Auth::user();
     $user->name = $request->name;
-    $user->logo = $request->file('logo')->store('/public/universidad');
+    if($request->hasFile('image')){
+      $user->logo = $request->file('image')->getRealPath();
+      Cloudder::upload($user->imagen, null);
+      $resultado = Cloudder::getResult();
+      $user->logo = $resultado['public_id'];
+      $user->logo_url = $resultado['url'];
+      // $user->logo = $request->file('logo')->store('/public/universidad');
+    }
     $user->save();
     return view('home.universidad', compact('user'));
   }
@@ -46,9 +53,14 @@ class UniversidadHomeController extends Controller
       'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
     $user = Auth::user();
-    $user->logo = $request->file('logo')->store('/public/universidad');
-    $user->save();
+    if($request->hasFile('image')){
+      $user->logo = $request->file('image')->getRealPath();
+      Cloudder::upload($user->imagen, null);
+      $user->logo = Cloudder::getResult()['public_id'];
 
+      // $user->logo = $request->file('logo')->store('/public/universidad');
+    }
+    $user->save();
     return view('home.universidad', compact('user'));
   }
 

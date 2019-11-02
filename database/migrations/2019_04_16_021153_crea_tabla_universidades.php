@@ -22,6 +22,7 @@ class CreaTablaUniversidades extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('logo')->nullable();
+            $table->string('logo_url')->nullable();
 
             $table->timestamps();
             // $table->foreign('user_id')

@@ -7,7 +7,7 @@
   <script>tinymce.init({selector:'textarea'});</script>
   <form  action="{{route('tutoriales.store') }}" method="post">
     @csrf
-    
+
     <div class="form-group">
       <label class="form-label">Selecciona a que subcategoria pertenece</label>
       <select name="subcategoria_id" class="form-control">
@@ -20,6 +20,6 @@
     <label for="titulo">Titulo</label>
     <input type="text" name="titulo" value="">
     <textarea class="description" name="description"></textarea>
-    <button type="submit" class="btn btn-primary" name="button">Guardar</button>
+    <button type="submit" class="btn btn-primary">Guardar</button>
   </form>
 @endsection
