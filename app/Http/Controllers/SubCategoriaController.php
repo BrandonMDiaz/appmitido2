@@ -61,7 +61,7 @@ class SubCategoriaController extends Controller
     $sub->universidad_id = Auth::guard('universidad')->id();
     $sub->categoria_id = $request->input('categoria_id');
     $sub->save();
-    return redirect()->route('subcategorias.index');
+    return redirect()->route('subcategorias.create')->with('status','Subcategoria creada con exito');
   }
 
   /**
@@ -108,7 +108,7 @@ class SubCategoriaController extends Controller
     $subcategoria->universidad_id = Auth::guard('universidad')->id();
     $subcategoria->categoria_id = $request->input('categoria_id');
     $subcategoria->save();
-    return redirect()->route('subcategorias.index');
+    return redirect()->route('subcategorias.index')->with('status','Subcategoria modificada con exito');;
 
   }
 
@@ -121,6 +121,6 @@ class SubCategoriaController extends Controller
   public function destroy(SubCategoria $subcategoria)
   {
     $subcategoria->delete();
-    return redirect()->route('subcategorias.index');
+    return redirect()->route('subcategorias.index')->with('status','Subcategoria eliminada con exito');
   }
 }

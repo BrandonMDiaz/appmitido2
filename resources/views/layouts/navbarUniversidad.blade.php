@@ -29,11 +29,11 @@
                         <a href="{{route('categorias.create')}}">Crear</a>
                     </li>
                     <li>
-                        <a href="{{route('categorias.index')}}">Modificar</a>
+                        <a href="{{route('categorias.index')}}">Ver</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{route('categorias.index')}}">Eliminar</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
             <li class="active">
@@ -43,11 +43,11 @@
                         <a href="{{route('subcategorias.create')}}">Crear</a>
                     </li>
                     <li>
-                        <a href="{{route('subcategorias.index')}}">Modificar</a>
+                        <a href="{{route('subcategorias.index')}}">Ver</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{route('subcategorias.index')}}">Eliminar</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
             <li >
@@ -57,11 +57,11 @@
                         <a href="{{route('preguntas.create')}}">Crear</a>
                     </li>
                     <li>
-                        <a href="{{route('preguntas.index')}}">Modificar</a>
+                        <a href="{{route('preguntas.index')}}">Ver</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{route('preguntas.index')}}">Eliminar</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
         </ul>

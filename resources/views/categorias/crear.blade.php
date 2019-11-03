@@ -1,11 +1,16 @@
 @extends('layouts.opcion')
 
 @section('content')
+  @if (session('status'))
+    <div class="alert alert-success">
+      {{session('status')}}
+    </div>
+  @endif
   <div class="row">
     <div class="col-md-8 offset-2">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title"> <a href="#">Crear Categoria</a></h3>
+          <h3 class="card-title">Crear Categoria</h3>
         </div>
         <div class="card-body">
           @if(isset($categoria))

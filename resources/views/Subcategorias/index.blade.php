@@ -2,10 +2,11 @@
 
 @section('content')
 
-  <div class="page-header">
-    <div class="page-title">
+  @if (session('status'))
+    <div class="alert alert-success">
+      {{session('status')}}
     </div>
-  </div>
+  @endif
 
   <div class="row">
     <div class="col-md-8 offset-2">

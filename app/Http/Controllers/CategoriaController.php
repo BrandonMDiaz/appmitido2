@@ -13,7 +13,7 @@ class CategoriaController extends Controller
   public function __construct()
   {
     $this->middleware('auth:universidad');
-    
+
   }
   /**
   * Display a listing of the resource.
@@ -53,7 +53,7 @@ class CategoriaController extends Controller
     $cat->universidad_id = Auth::guard('universidad')->id();
 
     $cat->save();
-    return redirect()->route('categorias.index');
+    return redirect()->route('categorias.create')->with('status', 'Creada con exito');
   }
 
   /**
@@ -95,7 +95,7 @@ class CategoriaController extends Controller
     $categoria->universidad_id = Auth::guard('universidad')->id();
     $categoria->save();
 
-    return redirect()->route('categorias.show', $categoria->id);
+    return redirect()->route('categorias.edit', $categoria->id)->with('status', 'Categoria editada con exito');
   }
 
   /**
@@ -107,6 +107,6 @@ class CategoriaController extends Controller
   public function destroy(Categoria $categoria)
   {
     $categoria->delete();
-    return redirect()->route('categorias.index');
+    return redirect()->route('categorias.index')->with('status', 'Categoria eliminada con exito');
   }
 }

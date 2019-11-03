@@ -71,6 +71,6 @@
           </div>
         </div>
       </div>
-      <script src="{{ asset('js/dropDown.js') }}" defer></script>
+      <script src="{{ asset('js/dropdown.js') }}" defer></script>
     </div>
 @endsection

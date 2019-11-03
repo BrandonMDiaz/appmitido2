@@ -11,7 +11,7 @@
           <label class="form-label">Selecciona que subcategoria quieres ver</label>
           <select onchange="this.form.submit()" name="subcategoria_id" class="form-control">
             @foreach($subcategorias as $sub)
-              <option onclick="buscar()" value="{{$sub->id}}" {{ $id == $sub->id ? 'selected' : '' }}>{{  $sub->nombre }}</option>
+              <option onclick="buscar()" value="{{$sub->id}}" {{ isset($id) ?  $id == $sub->id ? 'selected' : '' : '' }}>{{  $sub->nombre }}</option>
             @endforeach
           </select>
       </div>
@@ -19,7 +19,11 @@
 
     </div>
   </div>
-
+  @if (session('status'))
+    <div class="alert alert-success">
+      {{session('status')}}
+    </div>
+  @endif
   <div class="row">
     <div class="col-md-12 offset-0">
       <div class="card">
@@ -44,7 +48,7 @@
                 <tr>
                   <td>
                     <h4>
-                      {{$nombre}}
+                      {{isset($nombre) ? $nombre : ''}}
                     </h4>
                   </td>
                   <td></td>
@@ -77,7 +81,9 @@
       </div>
     </div>
     <div class="centrar" style="margin-top:20px;">
-      {{ $preguntas->links() }}
+      @if (isset($preguntas) && count($preguntas) > 0)
+        {{$preguntas->links()}}
+      @endif
     </div>
 
   </div>

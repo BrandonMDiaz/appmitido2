@@ -2,12 +2,9 @@
 
 @section('content')
 
-  @if (isset($exito))
-    <div id="my-modal" class="modal modal-1">
-      <div class="modal-exam">
-        <h1>Agregado correctamente</h1>
-        <button type="button" name="button" onclick="cerrar()">salir</button>
-      </div>
+  @if (session('status'))
+    <div class="alert alert-success">
+      {{session('status')}}
     </div>
   @endif
 
@@ -26,7 +23,11 @@
               <form enctype="multipart/form-data" action="{{ route('preguntas.store') }}" method="POST">
               @endif
               @csrf
-
+              @if (count($subcategorias) == 0)
+                <div class="alert alert-danger">
+                  Agrega subcategorias para poder continuar
+                </div>
+              @endif
               <div class="form-group">
                 <label class="form-label">Selecciona a que subcategoria pertenece</label>
                 <select name="subcategoria_id" class="form-control">
@@ -59,7 +60,7 @@
 
               <div class="form-group">
                 <label class="form-label">Opcion 1</label>
-                <input type="text" class="form-control  @error('opc1') is-invalid @enderror" name="opc1" value="{{ isset($pregunta) ? $pregunta->opcion1 : old('opc1') }}" placeholder="Nombre de persona que envía">
+                <input type="text" class="form-control  @error('opc1') is-invalid @enderror" name="opc1" value="{{ isset($pregunta) ? $pregunta->opcion1 : old('opc1') }}" placeholder="Opcion 1 de la pregunta...">
                 @error('opc1')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -69,7 +70,7 @@
 
               <div class="form-group">
                 <label class="form-label">Opcion 2</label>
-                <input type="text" class="form-control  @error('opc2') is-invalid @enderror" name="opc2" value="{{ isset($pregunta) ? $pregunta->opcion2 : old('opc2') }}" placeholder="Nombre de persona que envía">
+                <input type="text" class="form-control  @error('opc2') is-invalid @enderror" name="opc2" value="{{ isset($pregunta) ? $pregunta->opcion2 : old('opc2') }}" placeholder="Opcion 2 de la pregunta...">
                 @error('opc2')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -78,7 +79,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label">Opcion 3</label>
-                <input type="text" class="form-control  @error('opc3') is-invalid @enderror" name="opc3" value="{{ isset($pregunta) ? $pregunta->opcion3 :  old('opc3') }}" placeholder="Nombre de persona que envía">
+                <input type="text" class="form-control  @error('opc3') is-invalid @enderror" name="opc3" value="{{ isset($pregunta) ? $pregunta->opcion3 :  old('opc3') }}" placeholder="Opcion 3 de la pregunta...">
                 @error('opc3')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -87,7 +88,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label">Respuesta</label>
-                <input type="text" class="form-control  @error('resp') is-invalid @enderror" name="resp" value="{{ isset($pregunta) ? $pregunta->respuesta :  old('resp') }}" placeholder="Nombre de persona que envía">
+                <input type="text" class="form-control  @error('resp') is-invalid @enderror" name="resp" value="{{ isset($pregunta) ? $pregunta->respuesta :  old('resp') }}" placeholder="Respuesta correcta de la pregunta...">
                 @error('resp')
                 <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>

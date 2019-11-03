@@ -26,20 +26,23 @@ class PreguntaController extends Controller
   {
     $universidad_id = Auth::guard('universidad')->id();
     $subcategorias = SubCategoria::where('universidad_id', '=', $universidad_id)->get();
-    $id = $subcategorias[0]->id;
-    $nombre = $subcategorias[0]->nombre;
-    if(isset($request->subcategoria_id)){
-      $id = $request->subcategoria_id;
-      $preguntas = Pregunta::where('subcategoria_id', '=', $request->subcategoria_id)->paginate(15);
-      foreach ($subcategorias as $sub) {
-          if($sub->id == $request->subcategoria_id){
-              $nombre = $sub->nombre;
-          }
+    $preguntas = [];
+    if(count($subcategorias) > 0){
+      $id = $subcategorias[0]->id;
+      $nombre = $subcategorias[0]->nombre;
+      if(isset($request->subcategoria_id)){
+        $id = $request->subcategoria_id;
+        $preguntas = Pregunta::where('subcategoria_id', '=', $request->subcategoria_id)->paginate(15);
+        foreach ($subcategorias as $sub) {
+            if($sub->id == $request->subcategoria_id){
+                $nombre = $sub->nombre;
+            }
+        }
       }
-    }
-    else {
-      $preguntas = Pregunta::where('subcategoria_id', '=', $subcategorias[0]->id)->paginate(15);
-    // $subcategorias = SubCategoria::getPreguntas($universidad_id);
+      else {
+        $preguntas = Pregunta::where('subcategoria_id', '=', $subcategorias[0]->id)->paginate(15);
+      // $subcategorias = SubCategoria::getPreguntas($universidad_id);
+      }
     }
 
     return view('preguntas.index', compact('preguntas', 'subcategorias', 'id', 'nombre'));
@@ -93,8 +96,7 @@ class PreguntaController extends Controller
     $preg->opcion3 = $request->opc3;
     $preg->respuesta = $request->resp;
     $preg->save();
-    $exito = 1;
-    return redirect()->route('preguntas.create',compact('exito'));
+    return redirect()->route('preguntas.create')->with('status','Cargado correctamente');
   }
 
   /**
@@ -159,7 +161,6 @@ class PreguntaController extends Controller
     $pregunta->opcion3 = $request->opc3;
     $pregunta->respuesta = $request->resp;
     $pregunta->save();
-    $exito = 1;
 
     return redirect()->route('preguntas.show', $pregunta->id)->with('status','Cargado correctamente');
   }
@@ -172,8 +173,11 @@ class PreguntaController extends Controller
   */
   public function destroy(Pregunta $pregunta)
   {
-    Cloudder::destroy($pregunta->imagen);
+    if(isset($pregunta->imagen) && $pregunta->imagen != null){
+      Cloudder::destroy($pregunta->imagen);
+    }
+
     $pregunta->delete();
-    return redirect()->route('preguntas.index');
+    return redirect()->route('preguntas.index')->with('status', 'Eliminado correctamente');
   }
 }
