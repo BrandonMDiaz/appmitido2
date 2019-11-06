@@ -5,6 +5,8 @@
 	<div class="tutoriales">
 		<div class="header-tutoriales subtitulo">
 			<h1>Tutoriales</h1>
+		</div>
+		<div class="centrar" style="padding-left: 5%; padding-right:5%;">
 			<p>Escoge un tutorial para que comiences a mejorar tus conocimientos.</p>
 		</div>
 		@foreach ($subcategorias as $sub)

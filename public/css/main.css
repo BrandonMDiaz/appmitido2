@@ -1274,16 +1274,11 @@ a.article:hover {
   }
   .contenedor-navbar2{
     justify-content: center;
-    margin-right: 0%;
+    /* margin-right: 0%; */
   }
 }
 
-@media (max-width: 570px) {
-  .contenedor-navbar2 li{
-    width: 100%;
-    justify-content: center;
-  }
-}
+
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
@@ -1294,4 +1289,65 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
+}
+
+@media (max-width: 570px) {
+  .contenedor-navbar2 li{
+    width: 100%;
+    justify-content: center;
+  }
+  #navbarDropdown{
+    width: auto;
+  }
+  .stick2{
+    position: static;
+  }
+  .sticky{
+    position: static;
+  }
+  #header-landing{
+    height: auto;
+    flex-wrap: wrap;
+  }
+  #header-landing * {
+    width: 100%;
+  }
+  #header-landing h1{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .cards-landing{
+    flex-wrap: wrap;
+  }
+  .cards-landing *{
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .universidad-landing{
+    flex-wrap: wrap;
+
+  }
+  .universidad-landing * {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .logo2{
+    margin-left: 0px;
+  }
+  .lista-categorias *{
+    width: 100%;
+  }
+  .cont{
+    width: 100%;
+  }
+  .or-pregunta{
+    width: 100%;
+  }
+  .contenido{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .offset-2{
+    margin-left: 0px;
+  }
 }
