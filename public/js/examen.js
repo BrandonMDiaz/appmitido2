@@ -14,8 +14,8 @@ var respuestasCorrectas = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
 //el lugar donde está la respuesta correcta
 var indiceRespuestCorrecta = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
 //cronometro
-var secs = 59;
-var mins = 12;
+var secs = 12;
+var mins = 59;
 
 preguntaRandom();
 //funcion para cambiar la respuesta correcta de lugar
@@ -67,8 +67,6 @@ function finalizar() {
   let tiempo = document.getElementById('tiempo');
   //el input de calificacion
   let cal = document.getElementById('cal');
-
-
 
   // let tiempoEnSegundos = `${mins}:${secs}`;
   // obtenemos el tiempo que tardó
@@ -176,7 +174,7 @@ function preguntaContestada(pregunta){
 function empezar(){
   const modal = document.getElementById('my-modal');
   modal.style.display = 'none';
-
+  let end = 0;
   var time = setInterval(function(){
   	//revisar si secs llegó a 0
   	if(mins >= 0){
@@ -188,15 +186,19 @@ function empezar(){
           	document.getElementById("timer-sec").innerHTML = secs;
           }
   	}
-  	if(secs == 0){
-  		secs = 59
-  		mins--
-  	}
-  	else if(secs == 0 && mins == 0){
+  	if(secs == 0 && mins == 0){
       //run end aplication
-      finalizar();
-  		return;
+      if(end != 1){
+        end = 1;
+        finalizar();
+        clearInterval(time);
+      }
+  	}
+  	else if(secs == 0 && mins != 0){
+      secs = 59
+  		mins--
   	}
   	secs--
   },1000)
+
 }
