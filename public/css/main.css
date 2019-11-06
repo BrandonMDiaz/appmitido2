@@ -1299,8 +1299,9 @@ a.article:hover {
   #navbarDropdown{
     width: auto;
   }
-  .stick2{
+  .sticky2{
     position: static;
+    flex-wrap: wrap;
   }
   .sticky{
     position: static;
@@ -1349,5 +1350,34 @@ a.article:hover {
   }
   .offset-2{
     margin-left: 0px;
+  }
+  .tiempo{
+    width: 100%;
+    justify-content: center;
+  }
+  .numeros{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .barra-preguntas p{
+    margin-bottom: 20px;
+
+  }
+  .numeros ul{
+    width: 100%;
+    padding-left: 0px;
+  }
+  .boton-finalizar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper-re {
+    width: 100%;
+
+  }
+  .tutoriales-recomendados{
+    flex-wrap: wrap;
   }
 }
