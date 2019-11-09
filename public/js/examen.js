@@ -14,8 +14,8 @@ var respuestasCorrectas = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
 //el lugar donde está la respuesta correcta
 var indiceRespuestCorrecta = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
 //cronometro
-var secs = 12;
-var mins = 59;
+var secs = 59;
+var mins = 12;
 
 preguntaRandom();
 //funcion para cambiar la respuesta correcta de lugar

@@ -78,6 +78,9 @@
             <a class="dropdown-item" href="{{ route('perfil.show') }}">
               Configuración
             </a>
+            <a class="dropdown-item" href="{{ route('seleccionarU') }}">
+              Seleccionar Universidad
+            </a>
             <a class="dropdown-item" href="{{ route('logout') }}"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
