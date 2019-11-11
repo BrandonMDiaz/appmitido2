@@ -13,7 +13,9 @@
             {{$tutorial->titulo}}
           </p>
         </div>
-        {!!$tutorial->texto!!}
+        <div class="tut-body">
+          {!!$tutorial->texto!!}
+        </div>
       </div>
     </div>
   </div>
