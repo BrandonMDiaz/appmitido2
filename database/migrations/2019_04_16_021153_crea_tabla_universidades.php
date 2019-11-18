@@ -15,7 +15,6 @@ class CreaTablaUniversidades extends Migration
     {
         Schema::create('universidades', function (Blueprint $table) {
 
-            // $table->unsignedInteger('user_id');
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();

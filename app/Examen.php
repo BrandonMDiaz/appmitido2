@@ -15,11 +15,9 @@ class Examen extends Model
     return $examen;
     // return $examen->examenPregunta;
     // return $examen->examenPregunta;
-    //
   }
 
   static public function getEstadisticas($id){
-
     return $query;
   }
 

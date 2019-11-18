@@ -74,8 +74,6 @@ class Pregunta extends Model
         return [];
       }
       $take = 10 - count($merge);
-      // dd($take);
-      // $take = $div + $valanceador;
       $contador++;
     }while(count($merge) < 10);
     return $merge;

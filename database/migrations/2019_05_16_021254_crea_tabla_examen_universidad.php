@@ -17,7 +17,6 @@ class CreaTablaExamenUniversidad extends Migration
           $table->increments('id');
           $table->unsignedInteger('universidad_id');
           $table->string('nombre_examen');
-
           $table->foreign('universidad_id')
             ->references('id')
             ->on('universidades')
