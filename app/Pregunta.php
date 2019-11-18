@@ -19,7 +19,6 @@ class Pregunta extends Model
     ->get();
 
     $subCatTotal = count($categoria->subCategorias);
-
     if($subCatTotal == 0){
       return [];
     }
@@ -53,15 +52,14 @@ class Pregunta extends Model
     do {
       for ($i = 0; $i < $subCatTotal; $i++) {
         if($contDoWhile == 0){
+          //if else para tomar cuantos voy a saltar
           if(isset($contadorPorSubCategoria[$categoria->subCategorias[$i]->nombre])){
             $skip = $contadorPorSubCategoria[$categoria->subCategorias[$i]->nombre];
           }
           else {
             $skip = 0;
           }
-          // if($i == 1){
-          //   dd($categoria->subCategorias[$i]);
-          // }
+          //tomamos los datos
           $idSub = $categoria->subCategorias[$i]->id;
           $query = Pregunta::where('subcategoria_id', '=', $idSub)
                               ->offset($skip)
@@ -69,20 +67,28 @@ class Pregunta extends Model
                               ->get();
         }
         else {
+          //saltamos tantos y tomamos
           $skip = $contadorPorSubCategoria[$categoria->subCategorias[$i]->nombre];
           $query = Pregunta::where('subcategoria_id', '=', $categoria->subCategorias[$i]->id)
             ->skip($skip)
             ->take($take)
             ->get();
         }
+
+        //contamos las preguntas obtenidas
         $pregObtenidas = count($query);
+        //si esta seteado el arreglo entonces se lo sumamos, si no lo igualamos
         if(isset($contadorPorSubCategoria[$categoria->subCategorias[$i]->nombre])){
           $contadorPorSubCategoria[$categoria->subCategorias[$i]->nombre] += $pregObtenidas;
         }
         else {
           $contadorPorSubCategoria[$categoria->subCategorias[$i]->nombre] = $pregObtenidas;
         }
+
+        $valanceador = 0;
+        //hacemos el merge del query
         $merge = $merge->merge($query);
+        //recalculamos cuantos va a agarrar
         if($contDoWhile == 0){
           if ($pregObtenidas == $take){
             $take = $div + $valanceador;
@@ -99,6 +105,7 @@ class Pregunta extends Model
         else{
           $take = 10 - count($merge);
         }
+
         if(count($merge) == 10){
           return $merge;
         }
@@ -110,7 +117,6 @@ class Pregunta extends Model
       }
 
     }while(count($merge) < 10);
-
     return $merge;
 
   }

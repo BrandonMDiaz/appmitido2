@@ -638,9 +638,30 @@ li h5{
   margin-bottom: 2%;
   border-bottom: 1px solid #a7a7a9;
   border-top: 1px solid #a7a7a9;
-
 }
+
 .pregunta p {
+  margin-bottom: 0px;
+}
+
+.pregunta2{
+  max-height: 30%;
+  overflow-y: auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* padding: 3%; */
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 2%;
+  border-bottom: 1px solid #a7a7a9;
+  border-top: 1px solid #a7a7a9;
+}
+
+.pregunta2 p {
   margin-bottom: 0px;
 }
 fieldset{

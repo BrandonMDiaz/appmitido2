@@ -72,7 +72,7 @@ class SubCategoriaController extends Controller
   */
   public function show(SubCategoria $subcategoria)
   {
-
+    return view('Subcategorias.show', compact('subcategoria'));
   }
 
   /**

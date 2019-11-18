@@ -6,7 +6,7 @@
     <div id='preg2' class="preguntas-todas">
       <div class="main-pregunta">
         <fieldset>
-          <div class="pregunta">
+          <div class="pregunta2">
             <div style="width:100%;" class="centrar">
               <p >
                 {{$pregunta->pregunta}}
