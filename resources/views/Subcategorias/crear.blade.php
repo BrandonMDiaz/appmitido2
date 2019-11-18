@@ -42,10 +42,12 @@
                 </span>
                 @enderror
               </div>
-              <button type="submit" class="btn btn-primary ml-auto">Aceptar</button>
+              <button type="submit" class="btn btn-primary ml-auto" onclick="disableButton(this)">Aceptar</button>
             </form>
           </div>
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="{{ asset('js/doubleForm.js') }}"></script>
+
   @endsection

@@ -33,12 +33,14 @@
             <div style="margin-top:3%; margin-bottom:3%;">
               <img class="imagen-per" id="output"/>
             </div>
-            <button type="submit"class="btn btn-primary" name="button">modificar</button>
+            <button type="submit"class="btn btn-primary" onclick="disableButton(this)" >modificar</button>
           </div>
         </form>
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="{{ asset('js/doubleForm.js') }}"></script>
+
   <script>
     var loadFile = function(event) {
       var reader = new FileReader();

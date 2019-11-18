@@ -33,6 +33,8 @@
     {{-- <label for="titulo">Titulo</label>
     <input type="text" name="titulo" value=""> --}}
     <textarea class="description" name="description"></textarea>
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary" onclick="disableButton(this)">Guardar</button>
   </form>
+  <script type="text/javascript" src="{{ asset('js/doubleForm.js') }}"></script>
+
 @endsection

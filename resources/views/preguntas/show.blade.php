@@ -66,22 +66,20 @@
               </button>
             </div>
             <div class="modal-body">
-              <p>¿Estás seguro que quieres Eliminar la preguntas?</p>
+              <p>¿Estás seguro que quieres eliminar la preguntas?</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
               <form action="{{ route('preguntas.destroy', $pregunta->id) }}" method="POST">
                 <input type="hidden" name="_method" value="DELETE">
                 @csrf
-                <button type="submit"  class="btn btn-sm btn-danger">Borrar</button>
+                <button type="submit"  class="btn btn-sm btn-danger" onclick="disableButton(this)">Borrar</button>
               </form>
             </div>
           </div>
         </div>
       </div>
 
-
-<script type="text/javascript">
-
-</script>
+<script type="text/javascript" src="{{ asset('js/doubleForm.js') }}"></script>
+<script type="text/javascript"></script>
     @endsection

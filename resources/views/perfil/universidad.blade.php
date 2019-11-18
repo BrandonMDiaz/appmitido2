@@ -26,11 +26,12 @@
               <label for="logo" class="form-label">{{ __('Logo') }}</label>
               <input type="file" name="logo" value="">
             </div>
-            <button type="submit"class="btn btn-primary" name="button">modificar</button>
+            <button type="submit"class="btn btn-primary" onclick="disableButton(this)">modificar</button>
           </div>
         </form>
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="{{ asset('js/doubleForm.js') }}"></script>
 
 @endsection

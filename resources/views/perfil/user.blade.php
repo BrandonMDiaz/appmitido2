@@ -53,6 +53,7 @@
       @endforeach
     </div>
   </div>
+  
   <script src="{{ asset('js/perfil.js') }}" defer> </script>
   <script type="text/javascript">
     const categorias = @json($categorias);

@@ -63,7 +63,7 @@
 
                 <div class="form-group row mb-0">
                   <div class="col-md-6 offset-md-4">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary" onclick="disableButton(this)">
                       {{ __('Register') }}
                     </button>
                   </div>
@@ -75,5 +75,6 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="{{ asset('js/doubleForm.js') }}"></script>
 
 @endsection

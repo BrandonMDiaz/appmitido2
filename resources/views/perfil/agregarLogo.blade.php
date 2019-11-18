@@ -25,12 +25,14 @@
         <div style="margin-top:3%; margin-bottom:3%;">
           <img class="imagen-per" id="output"/>
         </div>
-        <button class="btn btn-primary"type="submit" name="button">Subir imagen</button>
+        <button class="btn btn-primary"type="submit" onclick="disableButton(this)">Subir imagen</button>
       </form>
     </div>
   </div>
 
   </div>
+  <script type="text/javascript" src="{{ asset('js/doubleForm.js') }}"></script>
+  
   <script>
     var loadFile = function(event) {
       var reader = new FileReader();

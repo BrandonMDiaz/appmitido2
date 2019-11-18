@@ -84,8 +84,7 @@ class SubCategoriaController extends Controller
   public function edit(SubCategoria $subcategoria)
   {
     $universidad_id = Auth::guard('universidad')->id();
-    $categorias = Categoria::getCategoria($universidad_id);
-    // dd($subCategoria->id);
+    $categorias = Categoria::getCategorias($universidad_id);
     return view('Subcategorias.crear', compact(['subcategoria','categorias']));
 
   }

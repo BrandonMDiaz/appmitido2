@@ -58,5 +58,6 @@
     </div>
   </div>
 </div>
+<script type="text/javascript" src="{{ asset('js/doubleForm.js') }}"></script>
 
 @endsection

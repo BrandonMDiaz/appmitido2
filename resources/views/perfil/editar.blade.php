@@ -51,7 +51,7 @@
           </span>
           @enderror
       </div>
-      <button type="submit"class="btn btn-primary" name="button">modificar</button>
+      <button type="submit"class="btn btn-primary" name="button" onclick="disableButton(this)">modificar</button>
     </div>
 
     </form>
@@ -81,5 +81,6 @@
 </div>
 </div>
 
+<script type="text/javascript" src="{{ asset('js/doubleForm.js') }}"></script>
 
 @endsection
