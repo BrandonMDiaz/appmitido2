@@ -50,9 +50,13 @@
           <div class="contador-pregunta">
             <p>Pregunta {{$loop->index + 1}} de 10</p>
           </div>
-          <div class="pregunta">
+          <div class="pregunta2">
             <p id='pregunta-{{$loop->index + 1}}'>
               {{$pregunta->pregunta}}</p>
+            </div>
+            <div class="centrar">
+              <img class="imagen-examen" src="{{isset($pregunta->imagen) ? $pregunta->imagen_url : ''}}" alt="">
+
             </div>
             <div class="opciones">
               <div id="1{{$loop->index}}op" class="opcion">
