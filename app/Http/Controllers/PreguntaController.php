@@ -27,6 +27,7 @@ class PreguntaController extends Controller
     $universidad_id = Auth::guard('universidad')->id();
     $subcategorias = SubCategoria::where('universidad_id', '=', $universidad_id)->get();
     $preguntas = [];
+    $id = 0;
     if(count($subcategorias) > 0){
       $id = $subcategorias[0]->id;
       $nombre = $subcategorias[0]->nombre;

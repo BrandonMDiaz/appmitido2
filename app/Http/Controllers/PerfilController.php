@@ -32,8 +32,12 @@ class PerfilController extends Controller
             'promedio' => 'required|numeric|max:100|min:60',
         ]);
     $user->name = $request->name;
-    $user->preparatoria = $request->preparatoria;
-    $user->promedio = $request->promedio;
+    if(isset($user->preparatoria)){
+      $user->preparatoria = $request->preparatoria;
+    }
+    if(isset($user->promedio)){
+      $user->promedio = $request->promedio;
+    }
     $user->save();
     return redirect()->route('perfil');
   }

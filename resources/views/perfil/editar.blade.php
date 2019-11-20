@@ -34,7 +34,7 @@
       {{-- preparatoria --}}
       <div class="form-group">
         <label for="preparatoria" class="form-label">{{ __('Preparatoria') }}</label>
-          <input id="preparatoria" type="text" class="form-control @error('preparatoria') is-invalid @enderror" name="preparatoria" value="{{  $user->preparatoria }}" required autocomplete="preparatoria" autofocus>
+          <input id="preparatoria" type="text" class="form-control @error('preparatoria') is-invalid @enderror" name="preparatoria" value="{{  $user->preparatoria }}" autocomplete="preparatoria" autofocus>
           @error('preparatoria')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -44,7 +44,7 @@
       {{-- promedio --}}
       <div class="form-group ">
         <label for="promedio" class="form-label">{{ __('Promedio') }}</label>
-          <input id="promedio" type="text" class="form-control @error('promedio') is-invalid @enderror" name="promedio" value="{{  $user->promedio }}" required autocomplete="promedio" autofocus>
+          <input id="promedio" type="text" class="form-control @error('promedio') is-invalid @enderror" name="promedio" value="{{  $user->promedio }}" autocomplete="promedio" autofocus>
           @error('promedio')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>

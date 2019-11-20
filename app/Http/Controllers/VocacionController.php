@@ -133,8 +133,16 @@ class VocacionController extends Controller
         break;
         case 'Filosofia':
         $list[] =  [
-        "Jiji no lo haga compa, echele ganas a las matematicas paro",
-        ":v"
+        "El objetivo de la filosofía no consiste en dominar un conjunto de hechos,
+         sino en pensar clara y nítidamente a través de ellos. Con ese fin, los
+         estudiantes de filosofía están capacitados para leer críticamente, analizar
+         y evaluar argumentos, discernir supuestos ocultos, construir argumentos
+         lógicamente precisos, y expresarse con claridad y exactitud en el habla
+         y en la escritura.",
+        "Estos talentos formidables se pueden aplicar a cuestiones filosóficas,
+        así como a otras áreas, pues los estudiantes de filosofía sobresalen de
+        manera clara en campos tan diversos como el derecho, los negocios, la medicina,
+        el periodismo y la política."
         ];
         break;
         default:
