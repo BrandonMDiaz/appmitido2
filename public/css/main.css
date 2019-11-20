@@ -16,6 +16,12 @@
   width: 80%;
   padding: 1%;
 }
+#font-link{
+  font-size: 16px;
+}
+#list-type{
+  list-style-type:disc;
+}
 tbody tr ul {
   list-style-type: circle;
 }
@@ -465,13 +471,15 @@ li h5{
   width: 100%;
   color: black;
   margin: 0px;
+  word-break: break-all;
+  white-space: normal;
 }
 
 .categoria-tutorial{
   padding-top: 10px;
   font-size: 17px;
-  width: 237px;
-  margin-left: 3%;;
+  /* width: 90%; */
+  margin-left: 5%;;
 }
 
 .tut-show{
@@ -1284,6 +1292,21 @@ a.article:hover {
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
+@media (max-width: 1400px) {
+  .categoria-tutorial{
+    margin-left: 6%;
+  }
+}
+@media (max-width: 1100px) {
+  .categoria-tutorial{
+    margin-left: 7%;
+  }
+}
+@media (max-width: 1100px) {
+  .categoria-tutorial{
+    margin-left: 8%;
+  }
+}
 @media (max-width: 880px) {
   .search{
     width: 60%;

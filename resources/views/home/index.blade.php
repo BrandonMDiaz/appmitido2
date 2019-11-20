@@ -16,14 +16,16 @@
                 <p onclick="dropDown(this)" class="titulo-tutorial">
                   {{$sub->nombre}}
                 </p>
-                <ul class="sub-menu">
+                <ul id="list-type"style="word-break: break-all;" class="sub-menu">
                   @if (count($sub->tutoriales) == 0)
                     <p style="color:#d4d4d4; font-size:19px;">No hay tutoriales</p>
                   @endif
                   @foreach ($sub->tutoriales as $tut)
-                    <a href="{{route('tutoriales.show', $tut->id)}}">
-                      <li>{{$tut->titulo}}</li>
-                    </a>
+                      <li style="word-break: break-all; white-space: normal;">
+                        <a id="font-link" style="word-break: break-all; white-space: normal;" href="{{route('tutorialA.show', $tut->id)}}">
+                          {{$tut->titulo}}
+                      </a>
+                      </li>
                   @endforeach
                 </ul>
               </li>
