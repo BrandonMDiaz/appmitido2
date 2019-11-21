@@ -32,20 +32,23 @@ class PerfilController extends Controller
             'promedio' => 'required|numeric|max:100|min:60',
         ]);
     $user->name = $request->name;
-    if(isset($user->preparatoria)){
+    if(isset($request->preparatoria)){
       $user->preparatoria = $request->preparatoria;
     }
-    if(isset($user->promedio)){
+    if(isset($request->promedio)){
       $user->promedio = $request->promedio;
     }
     $user->save();
     return redirect()->route('perfil');
   }
+
   public function perfil()
   {
     $examen = Auth::user()->examen;
     $user = Auth::user();
     $categorias = Categoria::getExamen($examen ,Auth::user()->id);
+
+
     // $data = $this->estadisticas($categorias);
     $data = Estadistica::estadisticas($categorias);
 

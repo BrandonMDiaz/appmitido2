@@ -35,7 +35,7 @@ class SBC
         // $atomo->setObjetivo(false);
         $memoria->cargarAtomo($at);
     }
-    
+
     return $inferenceEngine->encender($memoria, $moduloConocimiento);
 
   }

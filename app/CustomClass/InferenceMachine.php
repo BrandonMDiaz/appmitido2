@@ -71,4 +71,34 @@ class InferenceMachine
     }//end foreach
     return $list;
   }
+
+
+  function encender($memoria, $bc){
+    $list = [];
+    $contador = 0;
+    foreach ($bc->reglas as $regla) {
+      //separar regla en pedacitos
+      $reg = new Regla($regla);
+      foreach ($reg->reglaAtomos as $atom) {
+        if($memoria->atomoPresente($atom)){
+          //no hacer nada
+        }
+        else {
+        }
+      }
+      if($reg->probarRegla($memoria)){
+         $memoria->cargarAtomo($reg->atomoGenerado);
+      }
+      if($reg->generaObjetivo){
+        if($memoria->atomoPresente($reg->atomoGenerado)){
+          if($contador == 3){
+            return $list;
+          }
+          $list[] = $reg->atomoGenerado;
+          $contador ++;
+        }
+      }
+    }
+    return $list;
+  }
 }

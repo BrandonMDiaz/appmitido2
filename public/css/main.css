@@ -1,6 +1,9 @@
 .body{
   background-color: white;
 }
+.f{
+  width: 100%;
+}
 .flex-separados{
   display: flex;
   justify-content: space-between;
