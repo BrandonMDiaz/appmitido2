@@ -4,8 +4,8 @@
   <div class="">
     <header id="header-landing">
       <div class="estudia-header">
-        <h1>Preparate con esta aplicacion para que tengas una mayor oportunidad <br>
-          de entrar a la universidad de tus sueños</h1>
+        <h1>Preparate con esta aplicación para que tengas una mayor oportunidad <br>
+          de entrar a la universidad de tus sueños.</h1>
         </div>
         <div class="login-landing">
           <div class="header-login">
@@ -146,9 +146,9 @@
           <img src="/images/exam.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Examenes</h5>
-            <p class="card-text">Hay una serie de examenes para que el aspirante pueda practicar.<br>
-              Vienen con cronometro y separados por categorias.
-              Hay examenes de 10 preguntas y examenes completos. </p>
+            <p class="card-text">Hay una serie de exámenes para que el aspirante pueda practicar.<br>
+              Vienen con cronometro y separados por categorías.
+              Los examenes cuentan con 10 preguntas para que evalúes tus conocimientos. </p>
             </div>
           </div>
 
@@ -157,7 +157,7 @@
             <div class="card-body">
               <h5 class="card-title">Tutoriales</h5>
               <p class="card-text">Las universidades se encargaran de subir tutoriales para que los aspirantes tengan
-                informacion por la cual apoyarse.</p>
+                información con la cual apoyarse.</p>
               </div>
             </div>
 
@@ -166,7 +166,7 @@
               <div class="card-body">
                 <h5 class="card-title">Orientador Vocacional</h5>
                 <p class="card-text">Incluimos un orientador vocacional para aquellos jovenes que aun no
-                  no saben que ca estudiar.</p>
+                  no saben que carrera estudiar.</p>
                 </div>
               </div>
             </div>
@@ -177,8 +177,7 @@
               <div class="estudia-header2">
                 <h5>Universidades</h5>
                 <h1>Ayuda a los aspirantes a lograr su meta. </h1>
-                <h4>Juntos podremos prepar a los interesados en sacar la mejor nota.</h4>
-
+                <h4>Juntos podremos prepar a los interesados en sacar la mayor nota.</h4>
               </div>
             </div>
           </div>

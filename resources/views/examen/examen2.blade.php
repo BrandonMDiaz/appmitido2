@@ -6,10 +6,10 @@
     <div class="modal-exam">
       <h1>Examen de {{$nombre}}!!</h1>
       <h4>Estas por iniciar un examen de {{$nombre}}, este examen
-        contiene 10 preguntas que tendras que responder en un lapso de 10 minutos.
+        contiene 10 preguntas que tendras que responder en un lapso de 13 minutos.
       </h4>
       <br>
-      <h5>Presiona el boton cuando estes listo</h5>
+      <h5>Presiona el botón cuando estes listo</h5>
       <button type="button" name="button" onclick="empezar()">Empezar</button>
     </div>
   </div>
