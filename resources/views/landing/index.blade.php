@@ -165,7 +165,7 @@
               <img src="/images/quest.jpg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Orientador Vocacional</h5>
-                <p class="card-text">Incluimos un orientador vocacional para aquellos jovenes que aun no
+                <p class="card-text">Incluimos un orientador vocacional para aquellos jovenes que aun 
                   no saben que carrera estudiar.</p>
                 </div>
               </div>
